@@ -1,0 +1,27 @@
+\chapter{Planteamiento del problema}
+
+La interpretaci\'on de resonancias magn\'eticas lumbares es una tarea especializada que requiere conocimiento anat\'omico, experiencia cl\'inica y capacidad para analizar distintas estructuras en m\'ultiples niveles de la columna. En el flujo habitual de revisi\'on, el profesional debe acceder al estudio, recorrer las secuencias disponibles, identificar estructuras relevantes, observar relaciones anat\'omicas, detectar posibles alteraciones y, cuando corresponde, realizar mediciones o comparaciones visuales.
+
+Aunque los sistemas actuales de visualizaci\'on m\'edica permiten acceder a las im\'agenes y realizar mediciones manuales, muchas tareas vinculadas con la delimitaci\'on de estructuras anat\'omicas y la obtenci\'on de valores cuantitativos contin\'uan dependiendo del trabajo manual o semimanual. Esto puede generar carga operativa, variabilidad entre observadores y dificultad para obtener resultados estructurados, trazables y f\'acilmente reutilizables.
+
+En el caso de las resonancias magn\'eticas lumbares sagitales, estructuras como cuerpos vertebrales, discos intervertebrales y canal espinal son fundamentales para el an\'alisis anat\'omico. Sin embargo, su delimitaci\'on manual puede consumir tiempo y estar sujeta a diferencias de criterio. Adem\'as, cuando las mediciones no se encuentran integradas en una salida estructurada, su reutilizaci\'on o revisi\'on posterior puede depender de registros dispersos, capturas de pantalla o informes redactados manualmente.
+
+El problema central que aborda este proyecto puede formularse de la siguiente manera:
+
+\begin{displayquote}
+Existe una oportunidad de asistencia inform\'atica en el an\'alisis estructural de resonancias magn\'eticas lumbares sagitales, dado que la segmentaci\'on de estructuras anat\'omicas, la obtenci\'on de mediciones simples y la generaci\'on de salidas revisables a\'un pueden requerir tareas manuales, variables y poco integradas dentro de un mismo flujo funcional.
+\end{displayquote}
+
+Este problema no implica afirmar que el profesional carezca de herramientas para analizar estudios de RM lumbar, ni que la interpretaci\'on cl\'inica pueda automatizarse por completo. Por el contrario, el proyecto reconoce que el criterio profesional es indispensable. La dificultad se ubica en tareas operativas espec\'ificas que pueden ser asistidas por software: delimitar estructuras, calcular mediciones geom\'etricas, visualizar resultados de manera clara y organizar una salida editable que facilite la revisi\'on.
+
+A partir de esta problem\'atica, se identifican tres dimensiones principales.
+
+En primer lugar, una dimensi\'on operativa: el an\'alisis manual de estructuras anat\'omicas puede demandar tiempo, especialmente cuando se requiere revisar varios niveles, comparar regiones o generar documentaci\'on complementaria. La automatizaci\'on parcial de segmentaciones y mediciones podr\'ia reducir parte de esta carga.
+
+En segundo lugar, una dimensi\'on de variabilidad: las mediciones manuales o la delimitaci\'on visual de estructuras pueden diferir entre usuarios o entre distintos momentos de revisi\'on. Un sistema asistivo no elimina la necesidad de validaci\'on profesional, pero puede ofrecer una base inicial homog\'enea y trazable sobre la cual el profesional intervenga.
+
+En tercer lugar, una dimensi\'on de documentaci\'on: los resultados generados durante la revisi\'on de una imagen no siempre quedan estructurados de forma editable, reutilizable y vinculada con la regi\'on anat\'omica de origen. Una salida organizada por estructura, nivel y medici\'on puede facilitar la trazabilidad del an\'alisis.
+
+Por lo tanto, el desaf\'io de ingenier\'ia consiste en dise\~nar un prototipo que integre en un mismo flujo funcional la carga de im\'agenes, la segmentaci\'on autom\'atica de estructuras lumbares, la derivaci\'on de mediciones geom\'etricas, la visualizaci\'on de resultados y la generaci\'on de una salida editable. Este sistema debe mantener siempre al profesional dentro del circuito de revisi\'on, evitando presentar los resultados como diagn\'osticos autom\'aticos.
+
+La soluci\'on propuesta se diferencia de un sistema cl\'inico completo o de un producto regulado. Su finalidad es acad\'emica y experimental. Busca demostrar la factibilidad de integrar componentes conocidos --dataset p\'ublico, modelo de segmentaci\'on, m\'etricas, mediciones, interfaz y salida estructurada-- en un prototipo funcional acotado al an\'alisis asistido de RM lumbar sagital.

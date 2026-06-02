@@ -1,0 +1,52 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{enumitem}
+
+\geometry{left=3cm,right=2.5cm,top=3cm,bottom=3cm}
+\onehalfspacing
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue
+}
+
+\begin{document}
+
+\title{Prototipo de software para an\'alisis asistido de resonancias magn\'eticas lumbares sagitales}
+\author{Enzo Asplanatti \\ Francisco Fabrello}
+\date{2026}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+\input{chapters/capitulo_01_introduccion}
+\input{chapters/capitulo_02_planteamiento_problema}
+\input{chapters/capitulo_03_justificacion}
+\input{chapters/capitulo_04_objetivos}
+\input{chapters/capitulo_05_alcance}
+\input{chapters/capitulo_06_descripcion_solucion}
+
+% Capitulos a incorporar en una segunda instancia:
+% \input{chapters/capitulo_07_estado_del_arte}
+% \input{chapters/capitulo_08_marco_teorico}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
