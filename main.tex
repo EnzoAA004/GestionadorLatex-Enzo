@@ -21,13 +21,29 @@
 
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{framed}
+\usepackage{float}
 \usepackage[section,above,below]{placeins}
 \usepackage{microtype}
 \usepackage{anyfontsize}
+\usepackage{chngcntr}
 
 \usepackage{enumitem}
 \newlist{Properties}{enumerate}{2}
 \setlist[Properties]{label=Propiedad \arabic*.,itemindent=*}
+\setlist[itemize]{
+  topsep=3pt,
+  itemsep=2pt,
+  parsep=0pt,
+  partopsep=0pt,
+  leftmargin=1.25cm
+}
+\setlist[enumerate]{
+  topsep=3pt,
+  itemsep=2pt,
+  parsep=0pt,
+  partopsep=0pt,
+  leftmargin=1.25cm
+}
 \renewcommand{\labelitemii}{\textasteriskcentered}
 \renewcommand{\labelitemiii}{-}
 
@@ -38,10 +54,10 @@
 
 \newpagestyle{ruled}{
 	\sethead{\includegraphics[width=3.7cm]{./images/UADE_LARGE}}
-			{\parbox[b]{0.43\textwidth}{\raggedright\MakeUppercase{Prototipo de software para an\'alisis asistido de RM lumbar}}}
+			{\parbox[b]{0.50\textwidth}{\raggedright\fontsize{8.5}{10}\selectfont\MakeUppercase{Plataforma de apoyo al an\'alisis estructural de resonancia magn\'etica lumbar mediante segmentaci\'on anat\'omica asistida por inteligencia artificial}}}
 			{
 				\raisebox{1.5ex}{%
-					\parbox[b]{0.26\textwidth}{\raggedleft
+					\parbox[b]{0.19\textwidth}{\raggedleft\fontsize{9}{10}\selectfont
 					\begin{tabular}{r}
 						Asplanatti, Enzo \\
 						Fabrello, Francisco
@@ -60,7 +76,10 @@
 \usepackage{vmargin}
 \setmarginsrb{2.7cm}{2cm}{2.3cm}{1.5cm}{0cm}{2cm}{0cm}{1cm}
 
-\renewcommand{\thetable}{\thechapter.\Roman{table}}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\counterwithin{table}{chapter}
+\counterwithin{figure}{chapter}
 \setlength{\textfloatsep}{5pt}
 
 \usepackage{todonotes}
@@ -87,15 +106,18 @@
 	\renewcommand{\tablename}{TABLA}
 }
 
-\usepackage{indentfirst}
-\setlength{\parindent}{36pt}
+% Formato de parrafos
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
 
 \usepackage{multicol,multirow}
-\usepackage{array,longtable}
+\usepackage{array,longtable,tabularx}
 \usepackage{mathptmx}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \allowdisplaybreaks{}
 \usepackage{cancel}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc,babel}
 
 \newenvironment{example}[1][Ejemplo]{\begin{trivlist}
 	\item[\hspace{\labelsep} {\itshape{} #1}]}{\end{trivlist}}
@@ -198,7 +220,7 @@
   noautoscale,
   trim=0 0 0 0,
   clip
-]{cover/6d6a18e7-ec20-45ae-99ea-084094abeebe.pdf}
+]{cover/58d27b9b-fe75-4fee-90c3-2e9e430da9d0.pdf}
 \clearpage
 
 \input{chapters/title}
@@ -209,6 +231,11 @@
 \input{chapters/abstract}
 \newpage
 \tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
 
 \input{chapters/capitulo_01_introduccion}
 \input{chapters/capitulo_02_planteamiento_problema}
@@ -221,14 +248,18 @@
 \input{chapters/capitulo_07_estado_del_arte}
 \input{chapters/capitulo_08_marco_teorico}
 
-\nocite{*}
-\addcontentsline{toc}{chapter}{Bibliograf\'ia}
-\printbibliography{}
-
 \appendix
-\newpage
-\listoffigures
-\newpage
-\listoftables
+\input{appendices/anexo_a_glosario_tecnico}
+\input{appendices/anexo_b_figuras_anatomicas}
+
+\nocite{asplanatti_fabrello_propuesta_2026,kirillov_panoptic_2019}
+
+\cleardoublepage
+\phantomsection
+\printbibliography[notkeyword={adicional},heading=bibintoc,title={Referencias}]
+
+\cleardoublepage
+\phantomsection
+\printbibliography[keyword={adicional},heading=bibintoc,title={Bibliograf\'ia y recursos adicionales}]
 
 \end{document}

@@ -1,0 +1,31 @@
+\chapter{Glosario t\'ecnico}
+
+El presente anexo re\'une t\'erminos t\'ecnicos utilizados a lo largo del documento. Su finalidad es facilitar la lectura a evaluadores o lectores que no est\'en familiarizados con procesamiento de im\'agenes m\'edicas, resonancia magn\'etica o aprendizaje profundo aplicado a segmentaci\'on anat\'omica.
+
+\begin{description}[leftmargin=3.2cm, style=nextline]
+    \item[Resonancia magn\'etica (RM)] Modalidad de imagen m\'edica que permite observar estructuras internas del cuerpo mediante campos magn\'eticos y pulsos de radiofrecuencia, sin utilizar radiaci\'on ionizante.
+    \item[RM lumbar] Estudio de resonancia magn\'etica orientado a la regi\'on lumbar de la columna vertebral.
+    \item[Plano sagital] Plano anat\'omico que divide el cuerpo en porciones izquierda y derecha. En columna lumbar permite visualizar varios niveles vertebrales en una misma serie.
+    \item[V\'ertebra] Estructura \'osea que forma parte de la columna vertebral. En el prototipo se consideran principalmente los cuerpos vertebrales visibles en RM lumbar sagital.
+    \item[Disco intervertebral] Estructura ubicada entre dos v\'ertebras consecutivas, relevante para el an\'alisis morfol\'ogico de la columna lumbar.
+    \item[Canal espinal] Regi\'on anat\'omica contenida dentro de la columna vertebral. En este proyecto se toma como regi\'on operativa segmentada seg\'un las anotaciones del dataset utilizado.
+    \item[Imagen m\'edica digital] Representaci\'on computacional de un estudio m\'edico, compuesta por una matriz de intensidades y metadatos espaciales.
+    \item[DICOM] Est\'andar utilizado en entornos cl\'inicos para almacenamiento, transmisi\'on y visualizaci\'on de im\'agenes m\'edicas.
+    \item[NIfTI] Formato com\'un en investigaci\'on para representar vol\'umenes de im\'agenes m\'edicas y m\'ascaras de segmentaci\'on.
+    \item[Dataset] Conjunto de datos utilizado para entrenamiento, validaci\'on o prueba de modelos computacionales.
+    \item[SPIDER] Dataset p\'ublico de resonancias magn\'eticas lumbares con segmentaciones de referencia de v\'ertebras, discos intervertebrales y canal espinal.
+    \item[Ground truth] Anotaci\'on de referencia utilizada para entrenar o evaluar un modelo supervisado.
+    \item[Segmentaci\'on] Proceso computacional mediante el cual se delimita una estructura o regi\'on de inter\'es dentro de una imagen.
+    \item[M\'ascara] Imagen o matriz que indica qu\'e p\'ixeles o v\'oxeles pertenecen a una estructura segmentada.
+    \item[Segmentaci\'on multiclase] Segmentaci\'on que distingue m\'as de una estructura anat\'omica dentro de la misma imagen.
+    \item[Preprocesamiento] Conjunto de transformaciones aplicadas antes del modelo, como normalizaci\'on de intensidades, remuestreo o ajuste de dimensiones.
+    \item[Postprocesamiento] Conjunto de operaciones aplicadas despu\'es de la predicci\'on del modelo para mejorar u organizar las m\'ascaras generadas.
+    \item[U-Net] Arquitectura de red neuronal ampliamente utilizada para segmentaci\'on biom\'edica.
+    \item[nnU-Net] M\'etodo autoconfigurable para segmentaci\'on biom\'edica que adapta preprocesamiento, arquitectura, entrenamiento y postprocesamiento al dataset.
+    \item[Dice] M\'etrica de solapamiento entre una m\'ascara predicha y una m\'ascara de referencia.
+    \item[IoU] M\'etrica de intersecci\'on sobre uni\'on utilizada para evaluar coincidencia entre regiones segmentadas.
+    \item[HD95] Variante percentil 95 de la distancia de Hausdorff, utilizada para evaluar diferencias de borde entre segmentaciones.
+    \item[Salida estructurada editable] Plantilla generada por el sistema con resultados revisables y modificables por el profesional.
+    \item[Humano en el circuito] Enfoque en el cual el sistema propone resultados, pero el profesional conserva la revisi\'on y decisi\'on final.
+    \item[MVP] Producto m\'inimo viable; primera versi\'on funcional del sistema con alcance acotado.
+\end{description}
