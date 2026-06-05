@@ -9,14 +9,14 @@ Este repositorio contiene el documento LaTeX del Proyecto Final de Ingenieria:
 Para compilar:
 
 ```bash
-latexmk -pdf main.tex
+latexmk -pdf -use-biber main.tex
 ```
 
 O alternativamente:
 
 ```bash
 pdflatex main.tex
-bibtex main
+biber main
 pdflatex main.tex
 pdflatex main.tex
 ```
@@ -31,7 +31,7 @@ pdflatex main.tex
 
 ## Estado actual
 
-Incluye capitulos 1 a 6:
+Incluye capitulos 1 a 8:
 
 1. Introduccion
 2. Planteamiento del problema
@@ -39,11 +39,11 @@ Incluye capitulos 1 a 6:
 4. Objetivos
 5. Alcance
 6. Descripcion de la solucion propuesta
+7. Estado del arte
+8. Marco teorico
 
 Pendiente de incorporar:
 
-7. Estado del arte
-8. Marco teorico
 9. User research
 10. Requerimientos del sistema
 11. Diseno de la solucion y arquitectura
