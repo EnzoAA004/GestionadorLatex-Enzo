@@ -6,9 +6,7 @@ Este cap\'itulo presenta los conceptos necesarios para comprender el dise\~no de
 
 \section{RM lumbar y plano sagital}
 
-La resonancia magn\'etica (RM) es una modalidad de imagen no invasiva basada en el fen\'omeno de resonancia magn\'etica nuclear. Permite obtener alto contraste de tejidos blandos sin utilizar radiaci\'on ionizante \parencite{brown_semelka_mri_2014,mcrobbie_mri_2017}. En columna lumbar, resulta adecuada para observar cuerpos vertebrales, discos intervertebrales, canal espinal y tejidos adyacentes \parencite{modic_disk_1988,jarvik_deyo_low_back_pain_2002}.
-
-Las secuencias T1 y T2 modifican el contraste observado. T1 aporta buen detalle anat\'omico de estructuras \'oseas y m\'edula \'osea; T2 resalta l\'iquidos y estructuras con mayor contenido de agua, por lo que resulta \'util para evaluar discos y canal espinal \parencite{modic_disk_1988}. El plano sagital permite visualizar varios niveles lumbares en una misma serie, por lo que se alinea con el dataset SPIDER y con el alcance del prototipo \parencite{vandergraaf_spider_2024}.
+La resonancia magn\'etica (RM) es una modalidad de imagen no invasiva basada en el fen\'omeno de resonancia magn\'etica nuclear. Permite obtener alto contraste de tejidos blandos sin utilizar radiaci\'on ionizante \parencite{brown_semelka_mri_2014,mcrobbie_mri_2017}. En columna lumbar, resulta adecuada para observar cuerpos vertebrales, discos intervertebrales, canal espinal y tejidos adyacentes \parencite{modic_disk_1988,jarvik_deyo_low_back_pain_2002}. Las secuencias T1 y T2 modifican el contraste observado. T1 aporta buen detalle anat\'omico de estructuras \'oseas y m\'edula \'osea; T2 resalta l\'iquidos y estructuras con mayor contenido de agua, por lo que resulta \'util para evaluar discos y canal espinal \parencite{modic_disk_1988}. El plano sagital permite visualizar varios niveles lumbares en una misma serie, por lo que se alinea con el dataset SPIDER y con el alcance del prototipo \parencite{vandergraaf_spider_2024}.
 
 \section{Anatom\'ia relevante}
 
@@ -24,11 +22,7 @@ El anexo de figuras anat\'omicas complementa esta descripci\'on con esquemas vis
 
 \section{Representaci\'on computacional de im\'agenes m\'edicas}
 
-Una imagen m\'edica digital no es solo una matriz de intensidades. Tambi\'en contiene informaci\'on de orientaci\'on, resoluci\'on, espaciado, par\'ametros de adquisici\'on y metadatos. Esta informaci\'on es necesaria para interpretar distancias, \'areas y relaciones anat\'omicas.
-
-DICOM es el est\'andar dominante en entornos cl\'inicos para almacenamiento y transmisi\'on de im\'agenes m\'edicas \parencite{nema_dicom_2024}. En investigaci\'on tambi\'en se utiliza NIfTI, frecuente para vol\'umenes y m\'ascaras segmentadas \parencite{cox_nifti_2004}. Para el PFI, ambos conceptos justifican una etapa de carga y normalizaci\'on que preserve orientaci\'on, espaciado e integridad espacial.
-
-Las intensidades de RM no est\'an estandarizadas de forma absoluta. Por ello, los pipelines de segmentaci\'on suelen incluir normalizaci\'on de intensidades, remuestreo, recorte de regi\'on de inter\'es o reorientaci\'on \parencite{litjens_survey_2017,isensee_nnunet_2021}.
+Una imagen m\'edica digital no es solo una matriz de intensidades. Tambi\'en contiene informaci\'on de orientaci\'on, resoluci\'on, espaciado, par\'ametros de adquisici\'on y metadatos. Esta informaci\'on es necesaria para interpretar distancias, \'areas y relaciones anat\'omicas. DICOM es el est\'andar dominante en entornos cl\'inicos para almacenamiento y transmisi\'on de im\'agenes m\'edicas \parencite{nema_dicom_2024}. En investigaci\'on tambi\'en se utiliza NIfTI, frecuente para vol\'umenes y m\'ascaras segmentadas \parencite{cox_nifti_2004}. Para el PFI, ambos conceptos justifican una etapa de carga y normalizaci\'on que preserve orientaci\'on, espaciado e integridad espacial. Las intensidades de RM no est\'an estandarizadas de forma absoluta. Por ello, los pipelines de segmentaci\'on suelen incluir normalizaci\'on de intensidades, remuestreo, recorte de regi\'on de inter\'es o reorientaci\'on \parencite{litjens_survey_2017,isensee_nnunet_2021}.
 
 \section{Segmentaci\'on m\'edica y ground truth}
 
@@ -91,11 +85,7 @@ Estas m\'etricas permiten validar t\'ecnicamente el modelo, pero deben complemen
 
 \section{Visualizaci\'on, salida editable y trazabilidad}
 
-La visualizaci\'on superpuesta permite revisar la imagen original junto con las m\'ascaras generadas. Es necesaria para detectar errores de contorno, estructuras omitidas o etiquetas incorrectas. En el prototipo, la interfaz debe permitir diferenciar estructuras, consultar mediciones asociadas y facilitar la revisi\'on profesional.
-
-La salida estructurada editable organiza los resultados en un formato revisable, con estructura anat\'omica, nivel, medici\'on, unidad, estado de revisi\'on y observaciones. La editabilidad permite corregir valores, descartar resultados y evitar que el sistema imponga una interpretaci\'on autom\'atica.
-
-La trazabilidad exige que cada resultado pueda vincularse con su origen: imagen, m\'ascara, estructura, medici\'on y eventual correcci\'on profesional. Este principio diferencia al prototipo de una salida opaca y sostiene la validaci\'on posterior.
+La visualizaci\'on superpuesta permite revisar la imagen original junto con las m\'ascaras generadas. Es necesaria para detectar errores de contorno, estructuras omitidas o etiquetas incorrectas. En el prototipo, la interfaz debe permitir diferenciar estructuras, consultar mediciones asociadas y facilitar la revisi\'on profesional. La salida estructurada editable organiza los resultados en un formato revisable, con estructura anat\'omica, nivel, medici\'on, unidad, estado de revisi\'on y observaciones. La editabilidad permite corregir valores, descartar resultados y evitar que el sistema imponga una interpretaci\'on autom\'atica. La trazabilidad exige que cada resultado pueda vincularse con su origen: imagen, m\'ascara, estructura, medici\'on y eventual correcci\'on profesional. Este principio diferencia al prototipo de una salida opaca y sostiene la validaci\'on posterior.
 
 \section{IA asistiva, privacidad y l\'imites normativos}
 

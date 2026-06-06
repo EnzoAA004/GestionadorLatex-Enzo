@@ -2,9 +2,7 @@
 
 \section{Prop\'osito y alcance}
 
-Este cap\'itulo releva antecedentes acad\'emicos, datasets p\'ublicos, herramientas abiertas y soluciones comerciales vinculadas con el an\'alisis asistido de RM lumbar. El objetivo no es agotar la literatura sobre inteligencia artificial m\'edica, sino identificar qu\'e componentes existentes se relacionan con el MVP y qu\'e brecha justifica el prototipo.
-
-La revisi\'on se orienta a cinco ejes: datasets para segmentaci\'on lumbar, modelos de segmentaci\'on, mediciones derivadas de m\'ascaras, soluciones comerciales comparables y herramientas abiertas que pueden inspirar componentes del sistema.
+Este cap\'itulo releva antecedentes acad\'emicos, datasets p\'ublicos, herramientas abiertas y soluciones comerciales vinculadas con el an\'alisis asistido de RM lumbar. El objetivo no es agotar la literatura sobre inteligencia artificial m\'edica, sino identificar qu\'e componentes existentes se relacionan con el MVP y qu\'e brecha justifica el prototipo. La revisi\'on se orienta a cinco ejes: datasets para segmentaci\'on lumbar, modelos de segmentaci\'on, mediciones derivadas de m\'ascaras, soluciones comerciales comparables y herramientas abiertas que pueden inspirar componentes del sistema.
 
 \section{Estrategia de b\'usqueda y criterios de selecci\'on}
 
@@ -36,23 +34,15 @@ La disponibilidad de datos anotados condiciona el desarrollo de modelos de segme
 
 \subsection{SPIDER como dataset base}
 
-SPIDER es el antecedente m\'as alineado con el proyecto. Van der Graaf et al. presentan un dataset p\'ublico multic\'entrico de RM lumbar con segmentaciones de referencia de v\'ertebras, discos intervertebrales y canal espinal \parencite{vandergraaf_spider_2024}. Incluye 447 series sagitales T1 y T2 de 218 pacientes y un benchmark para comparar algoritmos.
-
-Su relevancia para el MVP es directa: contiene las estructuras previstas, provee ground truth para entrenamiento o evaluaci\'on y permite trabajar con datos p\'ublicos reproducibles. SPIDER no resuelve el flujo completo, ya que no incluye interfaz final, mediciones editables ni revisi\'on profesional; por ello funciona como base de datos y validaci\'on, no como soluci\'on integral.
+SPIDER es el antecedente m\'as alineado con el proyecto. Van der Graaf et al. presentan un dataset p\'ublico multic\'entrico de RM lumbar con segmentaciones de referencia de v\'ertebras, discos intervertebrales y canal espinal \parencite{vandergraaf_spider_2024}. Incluye 447 series sagitales T1 y T2 de 218 pacientes y un benchmark para comparar algoritmos. Su relevancia para el MVP es directa: contiene las estructuras previstas, provee ground truth para entrenamiento o evaluaci\'on y permite trabajar con datos p\'ublicos reproducibles. SPIDER no resuelve el flujo completo, ya que no incluye interfaz final, mediciones editables ni revisi\'on profesional; por ello funciona como base de datos y validaci\'on, no como soluci\'on integral.
 
 \subsection{LumbarDISC como referencia complementaria}
 
-LumbarDISC, asociado a la competencia RSNA Lumbar Spine Degenerative Classification, es un dataset de mayor escala orientado a clasificaci\'on de degeneraci\'on lumbar por nivel \parencite{richards_lumbardisc_2024}. Incluye 2.697 pacientes y 8.593 series de RM lumbar con anotaciones especializadas para estenosis y otras categor\'ias degenerativas.
-
-Su relaci\'on con el PFI es complementaria. Sirve para contextualizar la investigaci\'on actual en IA aplicada a columna lumbar, pero su tarea principal no es la segmentaci\'on anat\'omica primaria. Por ese motivo no reemplaza a SPIDER como dataset base del MVP.
+LumbarDISC, asociado a la competencia RSNA Lumbar Spine Degenerative Classification, es un dataset de mayor escala orientado a clasificaci\'on de degeneraci\'on lumbar por nivel \parencite{richards_lumbardisc_2024}. Incluye 2.697 pacientes y 8.593 series de RM lumbar con anotaciones especializadas para estenosis y otras categor\'ias degenerativas. Su relaci\'on con el PFI es complementaria. Sirve para contextualizar la investigaci\'on actual en IA aplicada a columna lumbar, pero su tarea principal no es la segmentaci\'on anat\'omica primaria. Por ese motivo no reemplaza a SPIDER como dataset base del MVP.
 
 \section{Modelos y sistemas de segmentaci\'on}
 
-La segmentaci\'on autom\'atica de im\'agenes m\'edicas se apoya frecuentemente en arquitecturas encoder-decoder, variantes de U-Net y sistemas auto-configurables. U-Net es una base metodol\'ogica cl\'asica para segmentaci\'on biom\'edica, mientras que nnU-Net adapta preprocesamiento, arquitectura, entrenamiento y postprocesamiento a cada tarea \parencite{isensee_nnunet_2021}. Para el PFI, nnU-Net resulta \'util como baseline o referencia reproducible frente a alternativas m\'as livianas.
-
-SPINEPS representa un antecedente fuerte de segmentaci\'on espinal multi-estructura en RM sagital \parencite{moller_spineps_2025}. El sistema trabaja con segmentaci\'on sem\'antica e instancia de estructuras espinales, utiliza SPIDER y demuestra viabilidad t\'ecnica para v\'ertebras, discos y canal espinal. Sin embargo, su foco sigue siendo el modelo de segmentaci\'on; no integra una salida editable de apoyo ni un flujo completo de revisi\'on profesional.
-
-Otros sistemas, como SpineNetV2, se orientan a detecci\'on, etiquetado vertebral y gradaci\'on radiol\'ogica \parencite{windsor_spinenetv2_2022,windsor_spinenet_2024}. Son antecedentes relevantes para automatizaci\'on de lectura lumbar, pero no equivalen al objetivo del MVP porque la clasificaci\'on entrega categor\'ias, mientras que el prototipo requiere m\'ascaras anat\'omicas trazables.
+La segmentaci\'on autom\'atica de im\'agenes m\'edicas se apoya frecuentemente en arquitecturas encoder-decoder, variantes de U-Net y sistemas auto-configurables. U-Net es una base metodol\'ogica cl\'asica para segmentaci\'on biom\'edica, mientras que nnU-Net adapta preprocesamiento, arquitectura, entrenamiento y postprocesamiento a cada tarea \parencite{isensee_nnunet_2021}. Para el PFI, nnU-Net resulta \'util como baseline o referencia reproducible frente a alternativas m\'as livianas. SPINEPS representa un antecedente fuerte de segmentaci\'on espinal multi-estructura en RM sagital \parencite{moller_spineps_2025}. El sistema trabaja con segmentaci\'on sem\'antica e instancia de estructuras espinales, utiliza SPIDER y demuestra viabilidad t\'ecnica para v\'ertebras, discos y canal espinal. Sin embargo, su foco sigue siendo el modelo de segmentaci\'on; no integra una salida editable de apoyo ni un flujo completo de revisi\'on profesional. Otros sistemas, como SpineNetV2, se orientan a detecci\'on, etiquetado vertebral y gradaci\'on radiol\'ogica \parencite{windsor_spinenetv2_2022,windsor_spinenet_2024}. Son antecedentes relevantes para automatizaci\'on de lectura lumbar, pero no equivalen al objetivo del MVP porque la clasificaci\'on entrega categor\'ias, mientras que el prototipo requiere m\'ascaras anat\'omicas trazables.
 
 \section{Mediciones derivadas de segmentaciones}
 

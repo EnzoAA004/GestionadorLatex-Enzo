@@ -101,11 +101,11 @@
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{\numberline {8.11}S\'intesis conceptual}{24}{section.8.11}%
-\contentsline {chapter}{\numberline {A}Glosario t\'ecnico}{26}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Figuras anat\'omicas de referencia}{29}{appendix.Alph2}%
-\contentsline {section}{\numberline {B.1}Esquema simplificado de columna lumbar sagital}{29}{section.Alph2.1}%
-\contentsline {section}{\numberline {B.2}Esquema conceptual de segmentaci\'on}{29}{section.Alph2.2}%
-\contentsline {chapter}{Referencias}{30}{appendix*.2}%
+\contentsline {chapter}{\numberline {A}Glosario t\'ecnico}{25}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Figuras anat\'omicas de referencia}{28}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Esquema simplificado de columna lumbar sagital}{28}{section.Alph2.1}%
+\contentsline {section}{\numberline {B.2}Esquema conceptual de segmentaci\'on}{28}{section.Alph2.2}%
+\contentsline {chapter}{Referencias}{29}{appendix*.2}%
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
@@ -232,7 +232,7 @@
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Bibliograf\'ia y recursos adicionales}{33}{appendix*.4}%
+\contentsline {chapter}{Bibliograf\'ia y recursos adicionales}{32}{appendix*.4}%
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 
 \babel@toc {spanish}{}\relax 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.24)  5 JUN 2026 21:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.24)  5 JUN 2026 21:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1577,18 +1577,14 @@ LaTeX Info: Redefining \. on input line 13.
 LaTeX Info: Redefining \% on input line 13.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
 (babel)             Reported on input line 13.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
-LaTeX Info: Redefining \. on input line 66.
-LaTeX Info: Redefining \% on input line 66.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
 LaTeX Info: Redefining \. on input line 68.
 LaTeX Info: Redefining \% on input line 68.
-LaTeX Info: Redefining \. on input line 69.
-LaTeX Info: Redefining \% on input line 69.
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
 LaTeX Info: Redefining \. on input line 71.
 LaTeX Info: Redefining \% on input line 71.
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
 LaTeX Info: Redefining \. on input line 74.
@@ -1601,6 +1597,10 @@ LaTeX Info: Redefining \. on input line 77.
 LaTeX Info: Redefining \% on input line 77.
 LaTeX Info: Redefining \. on input line 78.
 LaTeX Info: Redefining \% on input line 78.
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
 LaTeX Info: Redefining \. on input line 88.
 LaTeX Info: Redefining \% on input line 88.
 LaTeX Info: Redefining \. on input line 89.
@@ -1617,22 +1617,6 @@ LaTeX Info: Redefining \. on input line 95.
 LaTeX Info: Redefining \% on input line 95.
 LaTeX Info: Redefining \. on input line 96.
 LaTeX Info: Redefining \% on input line 96.
-LaTeX Info: Redefining \. on input line 125.
-LaTeX Info: Redefining \% on input line 125.
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
-LaTeX Info: Redefining \. on input line 127.
-LaTeX Info: Redefining \% on input line 127.
-LaTeX Info: Redefining \. on input line 128.
-LaTeX Info: Redefining \% on input line 128.
-LaTeX Info: Redefining \. on input line 129.
-LaTeX Info: Redefining \% on input line 129.
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
-LaTeX Info: Redefining \. on input line 131.
-LaTeX Info: Redefining \% on input line 131.
-LaTeX Info: Redefining \. on input line 132.
-LaTeX Info: Redefining \% on input line 132.
 LaTeX Info: Redefining \. on input line 133.
 LaTeX Info: Redefining \% on input line 133.
 LaTeX Info: Redefining \. on input line 134.
@@ -1641,6 +1625,8 @@ LaTeX Info: Redefining \. on input line 135.
 LaTeX Info: Redefining \% on input line 135.
 LaTeX Info: Redefining \. on input line 136.
 LaTeX Info: Redefining \% on input line 136.
+LaTeX Info: Redefining \. on input line 137.
+LaTeX Info: Redefining \% on input line 137.
 LaTeX Info: Redefining \. on input line 138.
 LaTeX Info: Redefining \% on input line 138.
 LaTeX Info: Redefining \. on input line 139.
@@ -1649,6 +1635,20 @@ LaTeX Info: Redefining \. on input line 140.
 LaTeX Info: Redefining \% on input line 140.
 LaTeX Info: Redefining \. on input line 141.
 LaTeX Info: Redefining \% on input line 141.
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
+LaTeX Info: Redefining \. on input line 143.
+LaTeX Info: Redefining \% on input line 143.
+LaTeX Info: Redefining \. on input line 144.
+LaTeX Info: Redefining \% on input line 144.
+LaTeX Info: Redefining \. on input line 146.
+LaTeX Info: Redefining \% on input line 146.
+LaTeX Info: Redefining \. on input line 147.
+LaTeX Info: Redefining \% on input line 147.
+LaTeX Info: Redefining \. on input line 148.
+LaTeX Info: Redefining \% on input line 148.
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
 LaTeX Info: Redefining \. on input line 159.
 LaTeX Info: Redefining \% on input line 159.
 LaTeX Info: Redefining \. on input line 160.
@@ -4227,7 +4227,7 @@ Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 Cap\'{\i }tulo 7.
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
-Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 36.
+Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 34.
 (pdftex.def)             Requested size: 105.2751pt x 36.8594pt.
 
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
@@ -4236,130 +4236,130 @@ Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 [16
 
 ]
-LaTeX Info: Redefining \sptext on input line 39.
-LaTeX Info: Redefining \. on input line 39.
-LaTeX Info: Redefining \% on input line 39.
-LaTeX Info: Redefining \sptext on input line 39.
-LaTeX Info: Redefining \. on input line 39.
-LaTeX Info: Redefining \% on input line 39.
+LaTeX Info: Redefining \sptext on input line 37.
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+LaTeX Info: Redefining \sptext on input line 37.
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
+LaTeX Info: Redefining \sptext on input line 41.
+LaTeX Info: Redefining \. on input line 41.
+LaTeX Info: Redefining \% on input line 41.
+LaTeX Info: Redefining \sptext on input line 41.
+LaTeX Info: Redefining \. on input line 41.
+LaTeX Info: Redefining \% on input line 41.
 LaTeX Info: Redefining \sptext on input line 45.
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
 LaTeX Info: Redefining \sptext on input line 45.
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
-LaTeX Info: Redefining \sptext on input line 51.
-LaTeX Info: Redefining \. on input line 51.
-LaTeX Info: Redefining \% on input line 51.
-LaTeX Info: Redefining \sptext on input line 51.
-LaTeX Info: Redefining \. on input line 51.
-LaTeX Info: Redefining \% on input line 51.
-LaTeX Info: Redefining \sptext on input line 53.
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
-LaTeX Info: Redefining \sptext on input line 53.
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
-LaTeX Info: Redefining \sptext on input line 55.
-LaTeX Info: Redefining \. on input line 55.
-LaTeX Info: Redefining \% on input line 55.
-LaTeX Info: Redefining \sptext on input line 55.
-LaTeX Info: Redefining \. on input line 55.
-LaTeX Info: Redefining \% on input line 55.
-LaTeX Info: Redefining \sptext on input line 55.
-LaTeX Info: Redefining \. on input line 55.
-LaTeX Info: Redefining \% on input line 55.
-LaTeX Info: Redefining \sptext on input line 55.
-LaTeX Info: Redefining \. on input line 55.
-LaTeX Info: Redefining \% on input line 55.
+LaTeX Info: Redefining \sptext on input line 45.
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \sptext on input line 45.
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \sptext on input line 45.
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \sptext on input line 45.
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \sptext on input line 45.
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \sptext on input line 45.
+LaTeX Info: Redefining \. on input line 45.
+LaTeX Info: Redefining \% on input line 45.
+LaTeX Info: Redefining \sptext on input line 49.
+LaTeX Info: Redefining \. on input line 49.
+LaTeX Info: Redefining \% on input line 49.
+LaTeX Info: Redefining \sptext on input line 49.
+LaTeX Info: Redefining \. on input line 49.
+LaTeX Info: Redefining \% on input line 49.
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
-Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 56.
+Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 50.
 (pdftex.def)             Requested size: 105.2751pt x 36.8594pt.
 
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
 [17]
-LaTeX Info: Redefining \sptext on input line 59.
-LaTeX Info: Redefining \. on input line 59.
-LaTeX Info: Redefining \% on input line 59.
-LaTeX Info: Redefining \sptext on input line 59.
-LaTeX Info: Redefining \. on input line 59.
-LaTeX Info: Redefining \% on input line 59.
-LaTeX Info: Redefining \sptext on input line 65.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
-LaTeX Info: Redefining \sptext on input line 65.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
-LaTeX Info: Redefining \sptext on input line 65.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
-LaTeX Info: Redefining \sptext on input line 65.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
-LaTeX Info: Redefining \sptext on input line 65.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
-LaTeX Info: Redefining \sptext on input line 65.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
+LaTeX Info: Redefining \sptext on input line 55.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+LaTeX Info: Redefining \sptext on input line 55.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+LaTeX Info: Redefining \sptext on input line 55.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+LaTeX Info: Redefining \sptext on input line 55.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+LaTeX Info: Redefining \sptext on input line 55.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+LaTeX Info: Redefining \sptext on input line 55.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
 
-Underfull \hbox (badness 5446) in paragraph at lines 81--81
+Underfull \hbox (badness 5446) in paragraph at lines 71--71
 []|\T1/ptm/m/n/10.95 (+20) Software mé-di-co
  []
 
 
-Underfull \hbox (badness 5446) in paragraph at lines 81--81
+Underfull \hbox (badness 5446) in paragraph at lines 71--71
 []|\T1/ptm/m/n/10.95 (+20) Software mé-di-co
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []|\T1/ptm/m/n/10.95 (+20) RemedyLogic
  []
 
 
-Underfull \hbox (badness 5446) in paragraph at lines 81--81
+Underfull \hbox (badness 5446) in paragraph at lines 71--71
 []|\T1/ptm/m/n/10.95 (+20) Software mé-di-co
  []
 
 
-Underfull \hbox (badness 1968) in paragraph at lines 81--81
+Underfull \hbox (badness 1968) in paragraph at lines 71--71
 \T1/ptm/m/n/10.95 (+20) PACS/RIS ni uso clí-ni-co
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []|\T1/ptm/m/n/10.95 (+20) Segmentación, me-di-cio-nes
  []
 
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
-Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 85.
+Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 76.
 (pdftex.def)             Requested size: 105.2751pt x 36.8594pt.
 
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
 [18]
-Underfull \hbox (badness 2005) in paragraph at lines 118--118
+Underfull \hbox (badness 2005) in paragraph at lines 108--108
 []|\T1/ptm/m/n/10.95 (+20) Dataset y bench-
  []
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 118--118
+Underfull \hbox (badness 6001) in paragraph at lines 108--108
 []|\T1/ptm/m/n/10.95 (+20) No in-clu-ye in-ter-faz,
  []
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 118--118
+Underfull \hbox (badness 2189) in paragraph at lines 108--108
 \T1/ptm/m/n/10.95 (+20) me-di-cio-nes ni sa-li-da
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
 []|\T1/ptm/m/n/10.95 (+20) Demuestra via-bi-li-dad multi-
  []
 
@@ -4407,33 +4407,57 @@ LaTeX Info: Redefining \% on input line 9.
 LaTeX Info: Redefining \sptext on input line 9.
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
-LaTeX Info: Redefining \sptext on input line 11.
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
-LaTeX Info: Redefining \sptext on input line 11.
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
-LaTeX Info: Redefining \sptext on input line 11.
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
-LaTeX Info: Redefining \sptext on input line 11.
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
-LaTeX Info: Redefining \sptext on input line 15.
-LaTeX Info: Redefining \. on input line 15.
-LaTeX Info: Redefining \% on input line 15.
-LaTeX Info: Redefining \sptext on input line 15.
-LaTeX Info: Redefining \. on input line 15.
-LaTeX Info: Redefining \% on input line 15.
-LaTeX Info: Redefining \sptext on input line 23.
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
-LaTeX Info: Redefining \sptext on input line 23.
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
+LaTeX Info: Redefining \sptext on input line 9.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \sptext on input line 9.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \sptext on input line 9.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \sptext on input line 9.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+LaTeX Info: Redefining \sptext on input line 13.
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
+LaTeX Info: Redefining \sptext on input line 13.
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
+LaTeX Info: Redefining \sptext on input line 21.
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
+LaTeX Info: Redefining \sptext on input line 21.
+LaTeX Info: Redefining \. on input line 21.
+LaTeX Info: Redefining \% on input line 21.
+LaTeX Info: Redefining \sptext on input line 25.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \sptext on input line 25.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \sptext on input line 25.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \sptext on input line 25.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \sptext on input line 25.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \sptext on input line 25.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \sptext on input line 25.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \sptext on input line 25.
+LaTeX Info: Redefining \. on input line 25.
+LaTeX Info: Redefining \% on input line 25.
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
-Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 28.
+Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 26.
 (pdftex.def)             Requested size: 105.2751pt x 36.8594pt.
 
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
@@ -4448,96 +4472,72 @@ LaTeX Info: Redefining \% on input line 29.
 LaTeX Info: Redefining \sptext on input line 29.
 LaTeX Info: Redefining \. on input line 29.
 LaTeX Info: Redefining \% on input line 29.
-LaTeX Info: Redefining \sptext on input line 29.
-LaTeX Info: Redefining \. on input line 29.
-LaTeX Info: Redefining \% on input line 29.
-LaTeX Info: Redefining \sptext on input line 29.
-LaTeX Info: Redefining \. on input line 29.
-LaTeX Info: Redefining \% on input line 29.
-LaTeX Info: Redefining \sptext on input line 31.
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
-LaTeX Info: Redefining \sptext on input line 31.
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
-LaTeX Info: Redefining \sptext on input line 31.
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
-LaTeX Info: Redefining \sptext on input line 31.
-LaTeX Info: Redefining \. on input line 31.
-LaTeX Info: Redefining \% on input line 31.
-LaTeX Info: Redefining \sptext on input line 35.
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
-LaTeX Info: Redefining \sptext on input line 35.
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
+LaTeX Info: Redefining \sptext on input line 39.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+LaTeX Info: Redefining \sptext on input line 39.
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+LaTeX Info: Redefining \sptext on input line 43.
+LaTeX Info: Redefining \. on input line 43.
+LaTeX Info: Redefining \% on input line 43.
+LaTeX Info: Redefining \sptext on input line 43.
+LaTeX Info: Redefining \. on input line 43.
+LaTeX Info: Redefining \% on input line 43.
 LaTeX Info: Redefining \sptext on input line 45.
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
 LaTeX Info: Redefining \sptext on input line 45.
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
-LaTeX Info: Redefining \sptext on input line 49.
-LaTeX Info: Redefining \. on input line 49.
-LaTeX Info: Redefining \% on input line 49.
-LaTeX Info: Redefining \sptext on input line 49.
-LaTeX Info: Redefining \. on input line 49.
-LaTeX Info: Redefining \% on input line 49.
-LaTeX Info: Redefining \sptext on input line 51.
-LaTeX Info: Redefining \. on input line 51.
-LaTeX Info: Redefining \% on input line 51.
-LaTeX Info: Redefining \sptext on input line 51.
-LaTeX Info: Redefining \. on input line 51.
-LaTeX Info: Redefining \% on input line 51.
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
-Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 52.
+Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 47.
 (pdftex.def)             Requested size: 105.2751pt x 36.8594pt.
 
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
 [22]
-LaTeX Info: Redefining \sptext on input line 70.
-LaTeX Info: Redefining \. on input line 70.
-LaTeX Info: Redefining \% on input line 70.
-LaTeX Info: Redefining \sptext on input line 70.
-LaTeX Info: Redefining \. on input line 70.
-LaTeX Info: Redefining \% on input line 70.
-LaTeX Info: Redefining \sptext on input line 70.
-LaTeX Info: Redefining \. on input line 70.
-LaTeX Info: Redefining \% on input line 70.
-LaTeX Info: Redefining \sptext on input line 70.
-LaTeX Info: Redefining \. on input line 70.
-LaTeX Info: Redefining \% on input line 70.
+LaTeX Info: Redefining \sptext on input line 64.
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+LaTeX Info: Redefining \sptext on input line 64.
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+LaTeX Info: Redefining \sptext on input line 64.
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+LaTeX Info: Redefining \sptext on input line 64.
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
-Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 95.
+Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 89.
 (pdftex.def)             Requested size: 105.2751pt x 36.8594pt.
 
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
 [23]
-LaTeX Info: Redefining \sptext on input line 102.
-LaTeX Info: Redefining \. on input line 102.
-LaTeX Info: Redefining \% on input line 102.
-LaTeX Info: Redefining \sptext on input line 102.
-LaTeX Info: Redefining \. on input line 102.
-LaTeX Info: Redefining \% on input line 102.
-LaTeX Info: Redefining \sptext on input line 104.
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
-LaTeX Info: Redefining \sptext on input line 104.
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
-LaTeX Info: Redefining \sptext on input line 104.
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
-LaTeX Info: Redefining \sptext on input line 104.
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
+LaTeX Info: Redefining \sptext on input line 92.
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
+LaTeX Info: Redefining \sptext on input line 92.
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
+LaTeX Info: Redefining \sptext on input line 94.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+LaTeX Info: Redefining \sptext on input line 94.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+LaTeX Info: Redefining \sptext on input line 94.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+LaTeX Info: Redefining \sptext on input line 94.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
 ) (appendices/anexo_a_glosario_tecnico.tex
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
@@ -4548,15 +4548,6 @@ Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
 [24]
-File: ./images/UADE_LARGE.png Graphic file (type png)
-<use ./images/UADE_LARGE.png>
-Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 1.
-(pdftex.def)             Requested size: 105.2751pt x 36.8594pt.
-
-Overfull \vbox (44.86716pt too high) has occurred while \output is active []
-
-
-[25]
 Ap\'{e}ndice A.
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
@@ -4566,7 +4557,7 @@ Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 16.
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
-[26
+[25
 
 ]
 File: ./images/UADE_LARGE.png Graphic file (type png)
@@ -4577,7 +4568,7 @@ Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 29.
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
-[27]) (appendices/anexo_b_figuras_anatomicas.tex
+[26]) (appendices/anexo_b_figuras_anatomicas.tex
 File: ./images/UADE_LARGE.png Graphic file (type png)
 <use ./images/UADE_LARGE.png>
 Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 1.
@@ -4586,7 +4577,7 @@ Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 1.
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
-[28]
+[27]
 Ap\'{e}ndice B.
 )
 File: ./images/UADE_LARGE.png Graphic file (type png)
@@ -4597,7 +4588,7 @@ Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 257.
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
-[29
+[28
 
 ]
 LaTeX Info: Redefining \sptext on input line 259.
@@ -4779,7 +4770,7 @@ Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 259.
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
-[30
+[29
 
 
 {C:/Users/enzoa/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
@@ -4977,7 +4968,7 @@ Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 259.
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
-[31]
+[30]
 LaTeX Info: Redefining \sptext on input line 259.
 LaTeX Info: Redefining \. on input line 259.
 LaTeX Info: Redefining \% on input line 259.
@@ -5016,7 +5007,7 @@ Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 261.
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
-[32]
+[31]
 LaTeX Info: Redefining \sptext on input line 263.
 LaTeX Info: Redefining \. on input line 263.
 LaTeX Info: Redefining \% on input line 263.
@@ -5055,7 +5046,7 @@ Package pdftex.def Info: ./images/UADE_LARGE.png  used on input line 265.
 Overfull \vbox (44.86716pt too high) has occurred while \output is active []
 
 
-[33
+[32
 
 
 ] 
@@ -5064,24 +5055,18 @@ enddocument/afterlastpage (AED): lastpage setting LastPage.
 LaTeX Info: Redefining \sptext on input line 13.
 LaTeX Info: Redefining \. on input line 13.
 LaTeX Info: Redefining \% on input line 13.
-LaTeX Info: Redefining \sptext on input line 65.
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
-LaTeX Info: Redefining \sptext on input line 66.
-LaTeX Info: Redefining \. on input line 66.
-LaTeX Info: Redefining \% on input line 66.
+LaTeX Info: Redefining \sptext on input line 67.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
 LaTeX Info: Redefining \sptext on input line 68.
 LaTeX Info: Redefining \. on input line 68.
 LaTeX Info: Redefining \% on input line 68.
-LaTeX Info: Redefining \sptext on input line 69.
-LaTeX Info: Redefining \. on input line 69.
-LaTeX Info: Redefining \% on input line 69.
+LaTeX Info: Redefining \sptext on input line 70.
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
 LaTeX Info: Redefining \sptext on input line 71.
 LaTeX Info: Redefining \. on input line 71.
 LaTeX Info: Redefining \% on input line 71.
-LaTeX Info: Redefining \sptext on input line 72.
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
 LaTeX Info: Redefining \sptext on input line 73.
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
@@ -5100,6 +5085,12 @@ LaTeX Info: Redefining \% on input line 77.
 LaTeX Info: Redefining \sptext on input line 78.
 LaTeX Info: Redefining \. on input line 78.
 LaTeX Info: Redefining \% on input line 78.
+LaTeX Info: Redefining \sptext on input line 79.
+LaTeX Info: Redefining \. on input line 79.
+LaTeX Info: Redefining \% on input line 79.
+LaTeX Info: Redefining \sptext on input line 80.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
 LaTeX Info: Redefining \sptext on input line 88.
 LaTeX Info: Redefining \. on input line 88.
 LaTeX Info: Redefining \% on input line 88.
@@ -5124,30 +5115,6 @@ LaTeX Info: Redefining \% on input line 95.
 LaTeX Info: Redefining \sptext on input line 96.
 LaTeX Info: Redefining \. on input line 96.
 LaTeX Info: Redefining \% on input line 96.
-LaTeX Info: Redefining \sptext on input line 125.
-LaTeX Info: Redefining \. on input line 125.
-LaTeX Info: Redefining \% on input line 125.
-LaTeX Info: Redefining \sptext on input line 126.
-LaTeX Info: Redefining \. on input line 126.
-LaTeX Info: Redefining \% on input line 126.
-LaTeX Info: Redefining \sptext on input line 127.
-LaTeX Info: Redefining \. on input line 127.
-LaTeX Info: Redefining \% on input line 127.
-LaTeX Info: Redefining \sptext on input line 128.
-LaTeX Info: Redefining \. on input line 128.
-LaTeX Info: Redefining \% on input line 128.
-LaTeX Info: Redefining \sptext on input line 129.
-LaTeX Info: Redefining \. on input line 129.
-LaTeX Info: Redefining \% on input line 129.
-LaTeX Info: Redefining \sptext on input line 130.
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
-LaTeX Info: Redefining \sptext on input line 131.
-LaTeX Info: Redefining \. on input line 131.
-LaTeX Info: Redefining \% on input line 131.
-LaTeX Info: Redefining \sptext on input line 132.
-LaTeX Info: Redefining \. on input line 132.
-LaTeX Info: Redefining \% on input line 132.
 LaTeX Info: Redefining \sptext on input line 133.
 LaTeX Info: Redefining \. on input line 133.
 LaTeX Info: Redefining \% on input line 133.
@@ -5160,6 +5127,9 @@ LaTeX Info: Redefining \% on input line 135.
 LaTeX Info: Redefining \sptext on input line 136.
 LaTeX Info: Redefining \. on input line 136.
 LaTeX Info: Redefining \% on input line 136.
+LaTeX Info: Redefining \sptext on input line 137.
+LaTeX Info: Redefining \. on input line 137.
+LaTeX Info: Redefining \% on input line 137.
 LaTeX Info: Redefining \sptext on input line 138.
 LaTeX Info: Redefining \. on input line 138.
 LaTeX Info: Redefining \% on input line 138.
@@ -5172,6 +5142,27 @@ LaTeX Info: Redefining \% on input line 140.
 LaTeX Info: Redefining \sptext on input line 141.
 LaTeX Info: Redefining \. on input line 141.
 LaTeX Info: Redefining \% on input line 141.
+LaTeX Info: Redefining \sptext on input line 142.
+LaTeX Info: Redefining \. on input line 142.
+LaTeX Info: Redefining \% on input line 142.
+LaTeX Info: Redefining \sptext on input line 143.
+LaTeX Info: Redefining \. on input line 143.
+LaTeX Info: Redefining \% on input line 143.
+LaTeX Info: Redefining \sptext on input line 144.
+LaTeX Info: Redefining \. on input line 144.
+LaTeX Info: Redefining \% on input line 144.
+LaTeX Info: Redefining \sptext on input line 146.
+LaTeX Info: Redefining \. on input line 146.
+LaTeX Info: Redefining \% on input line 146.
+LaTeX Info: Redefining \sptext on input line 147.
+LaTeX Info: Redefining \. on input line 147.
+LaTeX Info: Redefining \% on input line 147.
+LaTeX Info: Redefining \sptext on input line 148.
+LaTeX Info: Redefining \. on input line 148.
+LaTeX Info: Redefining \% on input line 148.
+LaTeX Info: Redefining \sptext on input line 149.
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
 LaTeX Info: Redefining \sptext on input line 159.
 LaTeX Info: Redefining \. on input line 159.
 LaTeX Info: Redefining \% on input line 159.
@@ -5673,13 +5664,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44562 strings out of 467871
- 899455 string characters out of 5418376
+ 44555 strings out of 467871
+ 899394 string characters out of 5418376
  1713978 words of memory out of 5000000
  72033 multiletter control sequences out of 15000+600000
- 710531 words of font info for 383 fonts, out of 8000000 for 9000
+ 710081 words of font info for 379 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,18n,108p,1183b,4834s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,18n,108p,1471b,4834s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/enzoa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmmi10.pfb><C:/Users/enzoa/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmr10.pfb><C:/Users/enzoa/AppData/Local/Programs/MiKTeX/fonts/type1/pu
@@ -5688,9 +5679,9 @@ blic/amsfonts/cm/cmsy10.pfb><C:/Users/enzoa/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/times/utmb8a.pfb><C:/Users/enzoa/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/times/utmr8a.pfb><C:/Users/enzoa/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (35 pages, 639004 bytes).
+Output written on main.pdf (34 pages, 638058 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
+ 626 PDF objects out of 1000 (max. 8388607)
+ 134 named destinations out of 1000 (max. 500000)
  86562 words of extra memory for PDF output out of 89155 (max. 10000000)
 
