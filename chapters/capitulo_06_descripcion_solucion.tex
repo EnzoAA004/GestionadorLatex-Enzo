@@ -1,80 +1,47 @@
 \chapter{Descripci\'on de la soluci\'on propuesta}
 
-La soluci\'on propuesta consiste en un prototipo funcional de software para el an\'alisis asistido de resonancias magn\'eticas lumbares sagitales. El sistema recibir\'a como entrada una imagen o serie de RM lumbar, aplicar\'a un pipeline de procesamiento para segmentar estructuras anat\'omicas relevantes, obtendr\'a mediciones cuantitativas simples a partir de las m\'ascaras generadas y presentar\'a los resultados en una interfaz visual y una salida estructurada editable.
+La soluci\'on propuesta consiste en un prototipo funcional para asistir el an\'alisis estructural de RM lumbar sagital. El sistema recibe una imagen o serie compatible, aplica un pipeline de procesamiento, segmenta estructuras anat\'omicas, calcula mediciones geom\'etricas simples y presenta los resultados en una visualizaci\'on superpuesta y una salida estructurada editable.
 
-La soluci\'on se plantea como una herramienta de asistencia. Esto significa que el sistema no emitir\'a diagn\'osticos, no clasificar\'a patolog\'ias de manera aut\'onoma y no recomendar\'a tratamientos. Su funci\'on ser\'a asistir tareas operativas: delimitar estructuras, calcular valores geom\'etricos, visualizar resultados y organizar informaci\'on para revisi\'on.
+\section{Descripci\'on general del flujo}
 
-\section{Flujo general del sistema}
-
-El flujo general del prototipo puede describirse en las siguientes etapas:
+El flujo del MVP se organiza de la siguiente manera:
 
 \begin{enumerate}
-    \item Carga del estudio: el usuario incorpora una RM lumbar sagital compatible con el sistema o selecciona un estudio previamente disponible dentro del entorno de prueba.
-    \item Normalizaci\'on y preprocesamiento: la imagen se prepara para su an\'alisis mediante procedimientos como ajuste de formato, normalizaci\'on de intensidades, reorientaci\'on, remuestreo o recorte, seg\'un las necesidades del modelo utilizado.
-    \item Segmentaci\'on anat\'omica: el sistema aplica un modelo de segmentaci\'on para identificar las estructuras contempladas en el MVP: v\'ertebras, discos intervertebrales y canal espinal.
-    \item Postprocesamiento: las m\'ascaras generadas se procesan para mejorar su consistencia, separar componentes, organizar estructuras y preparar la informaci\'on para mediciones y visualizaci\'on.
-    \item Extracci\'on de mediciones: a partir de las m\'ascaras se calculan mediciones geom\'etricas simples, tales como \'areas proyectadas, dimensiones relativas o relaciones entre estructuras.
-    \item Visualizaci\'on superpuesta: la interfaz presenta la imagen original junto con las m\'ascaras segmentadas, permitiendo al usuario revisar visualmente los resultados.
-    \item Revisi\'on profesional: el usuario puede aceptar, observar, corregir o descartar resultados. Esta etapa mantiene al profesional dentro del circuito de decisi\'on.
-    \item Salida estructurada editable: el sistema genera una plantilla organizada con los resultados obtenidos, incluyendo estructuras, mediciones, unidades, observaciones y estado de revisi\'on.
+    \item \textbf{Entrada y preprocesamiento:} carga del estudio, normalizaci\'on de intensidades, ajuste de formato y preparaci\'on de la imagen para el modelo.
+    \item \textbf{Segmentaci\'on anat\'omica:} generaci\'on de m\'ascaras para v\'ertebras, discos intervertebrales y canal espinal.
+    \item \textbf{Postprocesamiento y mediciones:} organizaci\'on de m\'ascaras, asociaci\'on con estructuras o niveles cuando sea posible y c\'alculo de valores geom\'etricos simples.
+    \item \textbf{Visualizaci\'on:} superposici\'on de m\'ascaras sobre la imagen original para revisar contornos, clases y mediciones.
+    \item \textbf{Revisi\'on profesional:} aceptaci\'on, correcci\'on, observaci\'on o descarte de resultados.
+    \item \textbf{Salida editable:} generaci\'on de una plantilla estructurada con estructuras, mediciones, unidades, observaciones y estado de revisi\'on.
 \end{enumerate}
 
-\section{M\'odulo de entrada y preprocesamiento}
+\section{Componentes principales del prototipo}
 
-El m\'odulo de entrada tendr\'a como finalidad cargar las im\'agenes que ser\'an analizadas por el prototipo. En una primera etapa, el sistema trabajar\'a con datos provenientes de datasets p\'ublicos anotados, priorizando aquellos que permitan evaluar segmentaciones contra m\'ascaras de referencia.
+\begin{table}[htbp]
+\centering
+\caption{Componentes funcionales del MVP}
+\label{tab:componentes_mvp}
+\small
+\begin{tabularx}{\textwidth}{p{0.28\textwidth} X}
+\hline
+\textbf{Componente} & \textbf{Funci\'on principal} \\
+\hline
+Entrada y preprocesamiento & Cargar im\'agenes compatibles, preservar informaci\'on espacial y preparar los datos para inferencia o entrenamiento. \\
+Segmentaci\'on & Identificar las estructuras anat\'omicas contempladas mediante un modelo de aprendizaje profundo o una adaptaci\'on viable. \\
+Mediciones & Calcular valores geom\'etricos simples derivados de m\'ascaras visibles y trazables. \\
+Visualizaci\'on & Mostrar la imagen original con m\'ascaras superpuestas, diferenciando estructuras y resultados asociados. \\
+Salida editable & Organizar resultados en una plantilla revisable, modificable y no diagn\'ostica. \\
+Validaci\'on & Comparar m\'ascaras contra referencias y complementar con revisi\'on cualitativa profesional. \\
+\hline
+\end{tabularx}
+\end{table}
 
-El preprocesamiento buscar\'a homogeneizar la informaci\'on de entrada para facilitar la aplicaci\'on del modelo de segmentaci\'on. Debido a que las im\'agenes de resonancia magn\'etica pueden presentar variabilidad de intensidad, resoluci\'on, orientaci\'on y formato, esta etapa resulta fundamental para obtener resultados consistentes.
+La selecci\'on final del modelo depender\'a de factibilidad de entrenamiento, recursos disponibles, compatibilidad con los datos y rendimiento obtenido. Arquitecturas como U-Net o nnU-Net funcionan como referencias metodol\'ogicas para esta decisi\'on.
 
-Entre las tareas posibles se incluyen normalizaci\'on de intensidades, ajuste de dimensiones, conversi\'on de formato, remuestreo espacial y preparaci\'on de tensores de entrada para el modelo. Las transformaciones aplicadas deber\'an documentarse para asegurar trazabilidad y reproducibilidad.
+\section{Rol del profesional y resultado esperado}
 
-\section{M\'odulo de segmentaci\'on}
+El prototipo se dise\~na bajo un enfoque de humano en el circuito. La inteligencia artificial propone segmentaciones y mediciones, pero el profesional conserva la revisi\'on final. Esta condici\'on es necesaria porque las m\'ascaras pueden contener errores, las mediciones requieren contexto y el alcance del proyecto no contempla diagn\'ostico aut\'onomo.
 
-El m\'odulo de segmentaci\'on ser\'a responsable de identificar autom\'aticamente las estructuras anat\'omicas definidas en el alcance. Para ello se implementar\'a o adaptar\'a un modelo de aprendizaje profundo orientado a segmentaci\'on de im\'agenes m\'edicas.
+El resultado esperado del MVP no se mide solo por una m\'etrica de segmentaci\'on, sino por la coherencia del flujo completo: imagen de entrada, m\'ascaras, mediciones, visualizaci\'on, revisi\'on y salida editable. De este modo, el proyecto se ubica entre la investigaci\'on algor\'itmica y el desarrollo de software aplicado, con un aporte centrado en integraci\'on, trazabilidad y reproducibilidad acad\'emica.
 
-El sistema podr\'a utilizar como referencia arquitecturas ampliamente empleadas en este campo, tales como U-Net, nnU-Net u otros enfoques compatibles con el dataset y las restricciones de hardware disponibles. La elecci\'on final depender\'a de la factibilidad de entrenamiento, disponibilidad de recursos, rendimiento obtenido y facilidad de integraci\'on con el resto del prototipo.
-
-La salida principal de este m\'odulo ser\'a una m\'ascara anat\'omica o conjunto de m\'ascaras que indiquen las regiones correspondientes a v\'ertebras, discos intervertebrales y canal espinal. Estas m\'ascaras ser\'an utilizadas posteriormente para visualizaci\'on, mediciones y evaluaci\'on t\'ecnica.
-
-\section{M\'odulo de mediciones cuantitativas}
-
-El m\'odulo de mediciones utilizar\'a las m\'ascaras generadas para obtener valores geom\'etricos simples. La finalidad de estas mediciones ser\'a aportar informaci\'on cuantitativa de apoyo, no establecer diagn\'osticos cl\'inicos.
-
-Cada medici\'on deber\'a estar asociada a una estructura segmentada visible y, cuando corresponda, a un nivel anat\'omico. Adem\'as, deber\'a indicarse la unidad utilizada y conservarse la relaci\'on con la imagen y la m\'ascara de origen.
-
-Las mediciones podr\'an incluir \'areas proyectadas, dimensiones relativas de discos, medidas asociadas al canal espinal en el plano sagital y comparaciones simples entre estructuras. La selecci\'on definitiva de mediciones depender\'a de la calidad de las m\'ascaras, la informaci\'on espacial disponible y la validaci\'on profesional.
-
-\section{M\'odulo de visualizaci\'on}
-
-El m\'odulo de visualizaci\'on permitir\'a observar la imagen original junto con las segmentaciones superpuestas. Esta funcionalidad resulta esencial porque permite revisar visualmente la plausibilidad anat\'omica de los resultados.
-
-La interfaz deber\'a permitir diferenciar las estructuras segmentadas, activar o desactivar capas, consultar mediciones asociadas y revisar los resultados generados por el sistema. El dise\~no se orientar\'a a claridad y revisi\'on, no a reemplazo del visor m\'edico profesional.
-
-La visualizaci\'on superpuesta tambi\'en servir\'a como soporte para la validaci\'on cualitativa, ya que el profesional podr\'a evaluar si los contornos generados resultan razonables, si las estructuras est\'an correctamente representadas y si la informaci\'on presentada es comprensible.
-
-\section{M\'odulo de salida estructurada editable}
-
-La salida estructurada editable ser\'a una plantilla generada a partir de los resultados del sistema. Esta salida podr\'a incluir datos como estructura anat\'omica, nivel, medici\'on, unidad, observaci\'on y estado de revisi\'on.
-
-Su car\'acter editable es fundamental. El usuario debe poder corregir valores, agregar comentarios, descartar mediciones o indicar que un resultado requiere revisi\'on. De esta forma, la salida no se presenta como informe cl\'inico cerrado, sino como un documento de apoyo generado autom\'aticamente y supervisado por el profesional.
-
-Este m\'odulo representa uno de los aportes principales del prototipo, porque conecta los resultados t\'ecnicos del modelo con una forma de documentaci\'on revisable y trazable.
-
-\section{Rol del profesional}
-
-El prototipo se dise\~nar\'a bajo un enfoque de humano en el circuito. El sistema propone resultados, pero el profesional conserva la decisi\'on final. Esta decisi\'on de dise\~no responde tanto a razones \'eticas como t\'ecnicas: las segmentaciones autom\'aticas pueden presentar errores, las mediciones requieren interpretaci\'on contextual y el alcance del proyecto no contempla diagn\'ostico aut\'onomo.
-
-El profesional podr\'a intervenir revisando la segmentaci\'on, evaluando mediciones, modificando la salida editable y aportando observaciones. De esta manera, la inteligencia artificial funciona como soporte operativo y no como reemplazo del juicio experto.
-
-\section{Resultado esperado del MVP}
-
-El resultado esperado es un prototipo capaz de ejecutar un flujo completo sobre RM lumbar sagital: cargar una imagen, procesarla, segmentar estructuras anat\'omicas, generar mediciones, visualizar resultados y producir una salida editable.
-
-El \'exito del MVP no depender\'a \'unicamente de alcanzar m\'etricas elevadas de segmentaci\'on, sino de demostrar una integraci\'on funcional coherente entre los m\'odulos. La validaci\'on deber\'a considerar tanto el rendimiento t\'ecnico como la utilidad percibida del flujo propuesto.
-
-En consecuencia, la soluci\'on propuesta se ubica en un punto intermedio entre la investigaci\'on algor\'itmica y el desarrollo de software aplicado. No se limita a evaluar un modelo, pero tampoco pretende convertirse en un producto cl\'inico final. Su aporte consiste en construir una herramienta acad\'emica, trazable y revisable que permita explorar la asistencia inform\'atica en el an\'alisis estructural de resonancias magn\'eticas lumbares sagitales.
-
-\section{Transici\'on hacia cap\'itulos 7 y 8}
-
-Una vez definido el problema, los objetivos, el alcance y la soluci\'on propuesta, resulta necesario analizar qu\'e antecedentes existen en relaci\'on con el an\'alisis asistido de resonancias magn\'eticas lumbares, la segmentaci\'on autom\'atica de estructuras anat\'omicas, las mediciones cuantitativas derivadas de m\'ascaras y las herramientas de revisi\'on profesional. Por este motivo, el siguiente cap\'itulo desarrollar\'a el estado del arte, con el fin de identificar datasets, modelos, soluciones comerciales y brechas funcionales relevantes para el presente proyecto.
-
-Posteriormente, el marco te\'orico establecer\'a los conceptos necesarios para comprender el dise\~no del prototipo: resonancia magn\'etica lumbar, anatom\'ia relevante, representaci\'on computacional de im\'agenes m\'edicas, segmentaci\'on, aprendizaje supervisado, m\'etricas de evaluaci\'on, visualizaci\'on, salida estructurada e inteligencia artificial asistiva.
+Los cap\'itulos siguientes fundamentan esta propuesta mediante el estado del arte y el marco te\'orico necesarios para comprender los antecedentes, datos, modelos, m\'etricas y criterios de dise\~no del prototipo.

@@ -1,267 +1,118 @@
 \chapter{Marco te\'orico}
 
-\section{Propósito y alcance del marco teórico}
+\section{Prop\'osito y alcance}
 
-El presente capítulo desarrolla los conceptos necesarios para comprender y justificar el diseño del prototipo propuesto. A diferencia del estado del arte, cuyo objetivo es relevar antecedentes, datasets, algoritmos y soluciones existentes, el marco teórico establece las bases conceptuales sobre las cuales se apoya el proyecto: la resonancia magnética lumbar como modalidad de imagen, las estructuras anatómicas de interés, la representación computacional de imágenes médicas, los fundamentos de segmentación, los modelos de aprendizaje profundo, las métricas de evaluación, las mediciones cuantitativas derivadas y el rol asistivo de la inteligencia artificial en el flujo profesional.
+Este cap\'itulo presenta los conceptos necesarios para comprender el dise\~no del prototipo: RM lumbar sagital, anatom\'ia relevante, representaci\'on computacional de im\'agenes m\'edicas, segmentaci\'on, aprendizaje supervisado, modelos de referencia, mediciones, m\'etricas, visualizaci\'on, salida editable y l\'imites \'eticos. El alcance te\'orico se mantiene acotado al MVP y no desarrolla en profundidad tareas cl\'inicas excluidas, como diagn\'ostico aut\'onomo o validaci\'on multic\'entrica.
 
-El alcance teórico se mantiene alineado con el objetivo del PFI: desarrollar un prototipo funcional que analice resonancias magnéticas lumbares sagitales, segmente vértebras, discos intervertebrales y canal espinal, extraiga mediciones cuantitativas acotadas, permita visualización superpuesta y genere una salida estructurada editable revisable por el profesional. En consecuencia, no se abordan en profundidad tareas clínicas que quedan fuera del MVP, tales como diagnóstico autónomo, clasificación integral de patologías degenerativas, integración hospitalaria completa, certificación regulatoria o validación clínica multicéntrica.
+\section{RM lumbar y plano sagital}
 
-\section{Resonancia magnética lumbar}
+La resonancia magn\'etica (RM) es una modalidad de imagen no invasiva basada en el fen\'omeno de resonancia magn\'etica nuclear. Permite obtener alto contraste de tejidos blandos sin utilizar radiaci\'on ionizante \parencite{brown_semelka_mri_2014,mcrobbie_mri_2017}. En columna lumbar, resulta adecuada para observar cuerpos vertebrales, discos intervertebrales, canal espinal y tejidos adyacentes \parencite{modic_disk_1988,jarvik_deyo_low_back_pain_2002}.
 
-\subsection{Principio general de la resonancia magnética}
+Las secuencias T1 y T2 modifican el contraste observado. T1 aporta buen detalle anat\'omico de estructuras \'oseas y m\'edula \'osea; T2 resalta l\'iquidos y estructuras con mayor contenido de agua, por lo que resulta \'util para evaluar discos y canal espinal \parencite{modic_disk_1988}. El plano sagital permite visualizar varios niveles lumbares en una misma serie, por lo que se alinea con el dataset SPIDER y con el alcance del prototipo \parencite{vandergraaf_spider_2024}.
 
-La resonancia magnética (RM) es una modalidad de imagen médica no invasiva basada en el fenómeno de resonancia magnética nuclear. En términos generales, los protones de hidrógeno presentes en los tejidos son alineados por un campo magnético externo y excitados mediante pulsos de radiofrecuencia. La señal emitida durante el retorno al estado de equilibrio es captada por bobinas receptoras y procesada para construir imágenes con alto contraste de tejidos blandos \parencite{brown_semelka_mri_2014,mcrobbie_mri_2017}.
+\section{Anatom\'ia relevante}
 
-A diferencia de la tomografía computada y de la radiografía convencional, la RM no utiliza radiación ionizante. Esta característica resulta especialmente relevante en estudios musculoesqueléticos y neurológicos, donde puede ser necesario repetir controles o analizar estructuras blandas con alto contraste. En el caso de la columna lumbar, la RM permite observar cuerpos vertebrales, discos intervertebrales, canal espinal, saco dural, raíces nerviosas y tejidos adyacentes con mayor detalle que otras modalidades para ciertas indicaciones clínicas \parencite{modic_disk_1988,jarvik_deyo_low_back_pain_2002}.
-
-\subsection{Secuencias T1 y T2 en columna lumbar}
-
-Las imágenes de RM se adquieren mediante secuencias de pulsos que modifican el contraste observado entre tejidos. En la evaluación lumbar, las secuencias ponderadas en T1 y T2 son particularmente relevantes:
+La regi\'on lumbar est\'a compuesta habitualmente por cinco v\'ertebras, L1 a L5, aunque pueden existir variantes anat\'omicas \parencite{standring_grays_2020}. El MVP se concentra en tres estructuras:
 
 \begin{itemize}
-    \item \textbf{Secuencia T1 ponderada:} proporciona buen contraste anatómico de estructuras óseas y médula ósea. Los tejidos con contenido graso tienden a presentar señal alta.
-    \item \textbf{Secuencia T2 ponderada:} resalta líquidos y tejidos con mayor contenido de agua. El líquido cefalorraquídeo y el núcleo pulposo de discos sanos suelen observarse con señal alta, lo que facilita la evaluación de morfología discal y canal espinal \parencite{modic_disk_1988}.
+    \item \textbf{Cuerpos vertebrales:} porciones principales de las v\'ertebras, \'utiles para identificar niveles y calcular descriptores geom\'etricos.
+    \item \textbf{Discos intervertebrales:} estructuras entre v\'ertebras consecutivas; su segmentaci\'on permite estimar dimensiones relativas o \'areas proyectadas.
+    \item \textbf{Canal espinal:} regi\'on anat\'omica operativa segmentada seg\'un las anotaciones del dataset, utilizada para mediciones de apoyo sin interpretaci\'on diagn\'ostica autom\'atica.
 \end{itemize}
 
-El dataset SPIDER, definido como fuente principal del MVP, incluye series sagitales T1 y T2 de columna lumbar con segmentaciones de referencia para vértebras, discos intervertebrales y canal espinal \parencite{vandergraaf_spider_2024}. Por ello, el marco teórico se concentra en estas secuencias y en este plano de adquisición.
+El anexo de figuras anat\'omicas complementa esta descripci\'on con esquemas visuales. La lumbalgia tiene alta relevancia sanitaria \parencite{hoy_low_back_pain_2014}, pero el prototipo no busca diagnosticar sus causas, sino asistir el an\'alisis estructural.
 
-\subsection{Plano sagital}
+\section{Representaci\'on computacional de im\'agenes m\'edicas}
 
-El plano sagital divide el cuerpo en porciones izquierda y derecha. En columna lumbar, las imágenes sagitales permiten visualizar en una misma serie múltiples niveles vertebrales, la continuidad del canal espinal y la morfología de los discos intervertebrales. Este plano resulta adecuado para tareas de segmentación anatómica primaria porque muestra de forma simultánea las estructuras previstas en el alcance del prototipo.
+Una imagen m\'edica digital no es solo una matriz de intensidades. Tambi\'en contiene informaci\'on de orientaci\'on, resoluci\'on, espaciado, par\'ametros de adquisici\'on y metadatos. Esta informaci\'on es necesaria para interpretar distancias, \'areas y relaciones anat\'omicas.
 
-\section{Anatomía lumbar relevante para el prototipo}
+DICOM es el est\'andar dominante en entornos cl\'inicos para almacenamiento y transmisi\'on de im\'agenes m\'edicas \parencite{nema_dicom_2024}. En investigaci\'on tambi\'en se utiliza NIfTI, frecuente para vol\'umenes y m\'ascaras segmentadas \parencite{cox_nifti_2004}. Para el PFI, ambos conceptos justifican una etapa de carga y normalizaci\'on que preserve orientaci\'on, espaciado e integridad espacial.
 
-\subsection{Organización general de la región lumbar}
+Las intensidades de RM no est\'an estandarizadas de forma absoluta. Por ello, los pipelines de segmentaci\'on suelen incluir normalizaci\'on de intensidades, remuestreo, recorte de regi\'on de inter\'es o reorientaci\'on \parencite{litjens_survey_2017,isensee_nnunet_2021}.
 
-La columna vertebral se organiza en regiones cervical, torácica, lumbar, sacra y coccígea. La región lumbar está compuesta habitualmente por cinco vértebras, denominadas L1 a L5, aunque pueden existir variantes anatómicas como vértebras transicionales. Esta región soporta gran parte de la carga axial del cuerpo y participa en movimientos de flexión, extensión, inclinación lateral y rotación limitada \parencite{standring_grays_2020}.
+\section{Segmentaci\'on m\'edica y ground truth}
 
-La lumbalgia representa una de las principales causas de discapacidad a nivel mundial y se asocia a una carga sanitaria y socioeconómica considerable \parencite{hoy_low_back_pain_2014}. Sin embargo, el presente proyecto no busca diagnosticar causas de dolor lumbar, sino asistir el análisis estructural de RM lumbar mediante segmentación y mediciones geométricas revisables.
+La segmentaci\'on asigna una etiqueta a cada p\'ixel o v\'oxel para indicar la estructura anat\'omica correspondiente \parencite{szeliski_computer_vision_2022}. En este proyecto, transforma una RM lumbar en m\'ascaras de v\'ertebras, discos y canal espinal. Esas m\'ascaras son la base para visualizaci\'on, mediciones y validaci\'on.
 
-\subsection{Estructuras anatómicas de interés}
-
-El MVP se concentra en tres estructuras anatómicas, seleccionadas por su presencia en SPIDER y por su utilidad para mediciones morfométricas básicas.
-
-\subsubsection{Cuerpos vertebrales}
-
-Los cuerpos vertebrales son las porciones anteriores y principales de las vértebras. En RM sagital pueden delimitarse como estructuras óseas de morfología relativamente regular. Su segmentación permite identificar niveles anatómicos y derivar mediciones geométricas como área proyectada, altura relativa o relaciones con estructuras adyacentes. Para el prototipo, estas mediciones se consideran descriptores geométricos, no indicadores diagnósticos autónomos.
-
-\subsubsection{Discos intervertebrales}
-
-Los discos intervertebrales se ubican entre cuerpos vertebrales consecutivos. Están compuestos por un núcleo pulposo central y un anillo fibroso periférico. En secuencias T2, los discos con mayor contenido hídrico suelen presentar señal alta, mientras que la degeneración discal puede asociarse a pérdida de señal y reducción de altura \parencite{modic_disk_1988}. La segmentación de discos permite estimar alturas relativas, áreas proyectadas y relaciones entre niveles.
-
-\subsubsection{Canal espinal y saco dural}
-
-El canal espinal corresponde al espacio anatómico contenido dentro de la columna vertebral por el que transcurren el saco dural y las estructuras neurales. En la región lumbar inferior, estrictamente, no se observa médula espinal en todos los niveles, sino raíces de la cauda equina dentro del saco dural. Por ello, en el contexto del prototipo se utiliza la denominación canal espinal como región operativa segmentada según las anotaciones del dataset, evitando atribuirle significado diagnóstico por sí misma.
-
-\section{Representación computacional de imágenes médicas}
-
-\subsection{Imagen médica como matriz con metadatos}
-
-Una imagen médica digital no equivale a una fotografía convencional. Además de una matriz de intensidades, incluye información espacial, orientación anatómica, resolución, espaciado entre píxeles o vóxeles, parámetros de adquisición y metadatos asociados al estudio. Esta información es necesaria para interpretar correctamente distancias, áreas y relaciones anatómicas.
-
-En procesamiento de RM, dos imágenes con igual tamaño en píxeles pueden representar regiones físicas diferentes si su spacing no coincide. Por eso, cualquier medición derivada de una máscara debe convertir píxeles o vóxeles a unidades físicas cuando la información de espaciado está disponible.
-
-\subsection{Formatos DICOM y NIfTI}
-
-DICOM es el estándar dominante en entornos clínicos para almacenar, transmitir y visualizar imágenes médicas \parencite{nema_dicom_2024}. Incluye tanto la imagen como metadatos de paciente, estudio, serie, modalidad y adquisición. En investigación, también es frecuente utilizar formatos como NIfTI, que simplifican el manejo de volúmenes y máscaras segmentadas \parencite{cox_nifti_2004}.
-
-Para el PFI, estos conceptos justifican una etapa de carga y normalización antes de aplicar modelos de segmentación. Dicha etapa debe preservar orientación, espaciado e integridad espacial de las máscaras, ya que cualquier alteración puede afectar la validez de las mediciones geométricas.
-
-\subsection{Normalización y preprocesamiento}
-
-Las intensidades en RM no están estandarizadas de forma absoluta como ocurre en tomografía computada con unidades Hounsfield. Diferentes equipos, protocolos y centros pueden producir distribuciones de intensidad distintas. Por ello, los modelos de segmentación suelen requerir preprocesamiento, como normalización de intensidades, recorte de región de interés, remuestreo espacial, reorientación y aumento de datos \parencite{litjens_survey_2017,isensee_nnunet_2021}.
-
-\section{Segmentación de imágenes médicas}
-
-\subsection{Definición}
-
-La segmentación es el proceso computacional mediante el cual se asigna una etiqueta a cada píxel o vóxel de una imagen para indicar la estructura o clase anatómica a la que pertenece \parencite{szeliski_computer_vision_2022}. En imágenes médicas, el resultado se representa habitualmente mediante una máscara binaria o multiclase.
-
-En este proyecto, la segmentación permite transformar una RM lumbar en una representación estructurada: regiones correspondientes a vértebras, discos intervertebrales y canal espinal. Esa representación es el insumo para visualización superpuesta, validación técnica y mediciones geométricas.
-
-\subsection{Tipos de segmentación relevantes}
+Para el MVP son relevantes tres tipos de segmentaci\'on:
 
 \begin{itemize}
-    \item \textbf{Segmentación semántica:} asigna una clase a cada píxel o vóxel, por ejemplo vértebra, disco o canal. No distingue instancias individuales dentro de una misma clase.
-    \item \textbf{Segmentación de instancias:} diferencia cada ocurrencia anatómica, por ejemplo L1, L2 o disco L4-L5. Es útil cuando las mediciones deben asociarse a un nivel específico.
-    \item \textbf{Segmentación multiclase:} asigna distintas clases anatómicas dentro de una misma máscara o volumen de etiquetas. Es el caso más directamente vinculado al MVP.
+    \item \textbf{Sem\'antica:} identifica clases anat\'omicas, como v\'ertebra, disco o canal.
+    \item \textbf{De instancias:} diferencia ocurrencias individuales, por ejemplo niveles vertebrales.
+    \item \textbf{Multiclase:} integra varias clases anat\'omicas en una misma salida.
 \end{itemize}
 
-Para el prototipo, resulta necesario identificar estructuras y, cuando sea posible, vincularlas a niveles anatómicos. La identificación por nivel puede resolverse como parte de la segmentación, mediante postprocesamiento o mediante reglas de ordenamiento anatómico, dependiendo de la implementación.
+En aprendizaje supervisado, el modelo aprende a partir de im\'agenes y m\'ascaras de referencia. Estas anotaciones, o ground truth, permiten entrenar, ajustar y evaluar el modelo. SPIDER es central porque provee m\'ascaras de referencia para las estructuras del MVP \parencite{vandergraaf_spider_2024}.
 
-\subsection{Desafíos en RM lumbar}
+\section{Modelos de aprendizaje profundo para segmentaci\'on}
 
-La segmentación lumbar presenta dificultades específicas:
+Las redes convolucionales y las arquitecturas encoder-decoder son frecuentes en im\'agenes m\'edicas porque permiten extraer patrones locales y reconstruir salidas densas. U-Net es una arquitectura de referencia para segmentaci\'on biom\'edica, basada en codificaci\'on, decodificaci\'on y conexiones de salto \parencite{ronneberger_unet_2015}. Su importancia para el PFI es conceptual: explica c\'omo una imagen puede transformarse en una m\'ascara anat\'omica.
+
+nnU-Net ampl\'ia esta idea al proponer un pipeline auto-configurable que adapta preprocesamiento, arquitectura, entrenamiento y postprocesamiento a cada dataset \parencite{isensee_nnunet_2021}. Por ello funciona como baseline metodol\'ogico para comparar soluciones o justificar decisiones de dise\~no. Otros enfoques, como Attention U-Net, Transformers o frameworks especializados, pueden ser antecedentes complementarios, pero no son indispensables para definir el MVP.
+
+\section{Mediciones cuantitativas desde m\'ascaras}
+
+Una m\'ascara de segmentaci\'on es una representaci\'on geom\'etrica de una estructura. A partir de ella pueden derivarse \'areas, alturas, anchos, centroides, distancias o relaciones entre estructuras, siempre que se preserve la informaci\'on espacial de la imagen.
+
+En el alcance del MVP, las mediciones deben ser simples y trazables:
 
 \begin{itemize}
-    \item \textbf{Bordes difusos:} los límites entre discos, cuerpos vertebrales y tejidos adyacentes pueden no ser nítidos, especialmente en degeneración avanzada.
-    \item \textbf{Variabilidad anatómica:} variantes como vértebras transicionales, escoliosis o espondilolistesis dificultan reglas rígidas de localización.
-    \item \textbf{Variabilidad de adquisición:} distintos centros, equipos, secuencias y parámetros generan cambios de contraste e intensidad.
-    \item \textbf{Diferencias de tamaño entre clases:} estructuras grandes y pequeñas pueden estar desbalanceadas, afectando el entrenamiento y la evaluación.
-    \item \textbf{Calidad de imagen:} artefactos de movimiento, cortes incompletos o ruido pueden degradar la precisión del modelo.
+    \item \'area proyectada de estructuras segmentadas;
+    \item altura o dimensi\'on relativa de discos intervertebrales;
+    \item medidas aproximadas del canal espinal en plano sagital;
+    \item comparaciones descriptivas entre niveles.
 \end{itemize}
 
-Estos desafíos explican por qué la segmentación médica requiere modelos robustos, validación por estructura y revisión profesional.
+Estas mediciones son datos de apoyo. Su interpretaci\'on cl\'inica requiere contexto y revisi\'on profesional, por lo que el prototipo no las convierte en diagn\'osticos.
 
-\section{Aprendizaje supervisado y anotaciones de referencia}
+\section{M\'etricas de evaluaci\'on}
 
-\subsection{Concepto de ground truth}
+La evaluaci\'on compara la m\'ascara predicha con una m\'ascara de referencia. Ninguna m\'etrica captura todos los errores, por lo que se recomienda combinar solapamiento y distancia de borde \parencite{taha_metrics_2015,maierhein_metrics_reloaded_2024}.
 
-En aprendizaje supervisado, el modelo aprende a partir de pares de entrada y salida: una imagen y su correspondiente máscara de referencia. Esta máscara, generalmente elaborada o revisada por expertos, funciona como ground truth técnico. En el contexto del PFI, el ground truth permite entrenar o ajustar modelos y evaluar objetivamente el resultado mediante métricas cuantitativas.
-
-SPIDER es central porque provee RM lumbares sagitales con segmentaciones de referencia de las estructuras previstas en el MVP \parencite{vandergraaf_spider_2024}. Esto evita depender de datos clínicos privados para la primera etapa de desarrollo y permite una validación reproducible.
-
-\subsection{Entrenamiento, validación y prueba}
-
-Un pipeline supervisado suele dividir los datos en subconjuntos de entrenamiento, validación y prueba. El entrenamiento ajusta los parámetros del modelo; la validación permite seleccionar hiperparámetros y evitar sobreajuste; y la prueba estima el desempeño sobre datos no vistos. Para una tesis de desarrollo, esta separación debe documentarse con claridad, especialmente si se realizan transformaciones o aumentos de datos.
-
-\section{Modelos de aprendizaje profundo para segmentación}
-
-\subsection{Redes neuronales convolucionales}
-
-Las redes neuronales convolucionales (CNN) son modelos especialmente adecuados para imágenes porque utilizan filtros locales que detectan patrones espaciales en distintas escalas. En imágenes médicas, las CNN han demostrado utilidad en tareas de clasificación, detección y segmentación, especialmente cuando se dispone de anotaciones suficientes o de estrategias de aumento de datos \parencite{lecun_deep_learning_2015,litjens_survey_2017}.
-
-\subsection{Arquitecturas encoder-decoder}
-
-La segmentación requiere una predicción densa: una etiqueta para cada píxel o vóxel. Las arquitecturas encoder-decoder resuelven este problema reduciendo primero la resolución para extraer contexto y reconstruyéndola luego para generar una máscara. Las conexiones de salto permiten recuperar detalles espaciales perdidos durante la codificación.
-
-\subsection{U-Net}
-
-U-Net es una arquitectura encoder-decoder propuesta para segmentación biomédica con conjuntos de datos relativamente pequeños \parencite{ronneberger_unet_2015}. Su estructura en forma de U y sus conexiones de salto la convirtieron en una arquitectura de referencia para segmentación médica. En el marco del PFI, U-Net representa una base conceptual clara para explicar cómo un modelo puede transformar una imagen de RM en una máscara anatómica.
-
-\subsection{nnU-Net}
-
-nnU-Net es un método auto-configurable que adapta preprocesamiento, arquitectura, configuración de entrenamiento y postprocesamiento a las propiedades de cada dataset \parencite{isensee_nnunet_2021}. Su importancia teórica radica en que no propone simplemente una nueva red, sino un pipeline completo de segmentación biomédica. Por eso resulta relevante como baseline metodológico para tareas como SPIDER.
-
-\subsection{Attention U-Net y modelos híbridos CNN-Transformer}
-
-Attention U-Net incorpora mecanismos de atención que permiten ponderar regiones relevantes durante la reconstrucción de la máscara \parencite{oktay_attention_unet_2018}. Por otra parte, los modelos basados en Transformers y variantes híbridas CNN-Transformer buscan capturar relaciones globales de la imagen, complementando la capacidad local de las convoluciones \parencite{dosovitskiy_vit_2021}. Estas variantes amplían el marco conceptual, aunque el MVP no depende necesariamente de implementarlas.
-
-\subsection{Frameworks especializados en imagen médica}
-
-Frameworks como MONAI ofrecen componentes específicos para IA médica: transformaciones, funciones de pérdida, métricas, carga de datos, inferencia por ventanas y flujos reproducibles \parencite{cardoso_monai_2022}. Su relevancia para el marco teórico no es solo técnica, sino metodológica: permiten construir pipelines más controlables que una implementación completamente manual.
-
-\section{Mediciones cuantitativas derivadas de máscaras}
-
-\subsection{Máscaras como base geométrica}
-
-Una máscara de segmentación no es únicamente una salida visual. También constituye una representación geométrica de una estructura. A partir de ella pueden derivarse áreas, alturas, anchos, centroides, distancias o relaciones entre estructuras, siempre que se respete la información espacial de la imagen.
-
-\subsection{Mediciones posibles en RM lumbar sagital}
-
-En el alcance del MVP, las mediciones deben ser simples, trazables y derivables directamente de las máscaras. Ejemplos adecuados son:
-
-\begin{itemize}
-    \item \textbf{Área proyectada de una estructura:} cantidad de píxeles o vóxeles de una máscara convertida a unidades físicas.
-    \item \textbf{Altura relativa de discos intervertebrales:} medida geométrica derivada de la extensión del disco en el plano sagital.
-    \item \textbf{Dimensiones relativas del canal espinal en el plano sagital:} medidas de apoyo basadas en la máscara del canal, sin asumir diagnóstico de estenosis.
-    \item \textbf{Comparación entre niveles:} relación entre valores obtenidos en distintos segmentos lumbares, útil como apoyo descriptivo.
-\end{itemize}
-
-\subsection{Límites clínicos de las mediciones}
-
-Es fundamental distinguir entre una medición geométrica y una conclusión clínica. Una medida calculada desde una máscara puede ser objetiva desde el punto de vista computacional, pero su interpretación clínica requiere revisión profesional, contexto del paciente y validación específica. Por ello, el prototipo presenta mediciones como información de apoyo, no como diagnóstico ni como recomendación terapéutica.
-
-\section{Métricas de evaluación de segmentación}
-
-\subsection{Necesidad de evaluación cuantitativa}
-
-La evaluación de un modelo de segmentación requiere comparar la máscara predicha con una máscara de referencia. Ninguna métrica aislada captura todos los errores posibles; por eso se recomienda combinar métricas de solapamiento con métricas de distancia o superficie \parencite{taha_metrics_2015,maierhein_metrics_reloaded_2024}.
-
-Sea P la máscara predicha y G la máscara de referencia.
-
-\subsection{Coeficiente Dice}
-
-El coeficiente Dice o Dice Similarity Coefficient (DSC) mide la superposición entre dos máscaras:
+Sea P la m\'ascara predicha y G la m\'ascara de referencia. El coeficiente Dice mide superposici\'on:
 
 \begin{equation}
 DSC(P,G)=\frac{2|P \cap G|}{|P|+|G|}
 \end{equation}
 
-Su valor se encuentra entre 0 y 1, donde 1 indica coincidencia perfecta. Es una métrica ampliamente utilizada en segmentación médica, aunque puede ser menos sensible a errores de borde en estructuras grandes.
-
-\subsection{Intersección sobre Unión}
-
-La Intersección sobre Unión, también conocida como índice de Jaccard, se define como:
+La intersecci\'on sobre uni\'on, o IoU, penaliza discrepancias entre predicci\'on y referencia:
 
 \begin{equation}
 IoU(P,G)=\frac{|P \cap G|}{|P \cup G|}
 \end{equation}
 
-Penaliza con mayor severidad las discrepancias entre predicción y referencia. Dice e IoU están relacionados matemáticamente, pero no son idénticos.
-
-\subsection{Distancia de Hausdorff y HD95}
-
-La distancia de Hausdorff mide discrepancias entre los bordes de dos máscaras. En imágenes médicas suele utilizarse la versión percentil 95 (HD95), que reduce la sensibilidad a outliers extremos:
+La distancia de Hausdorff percentil 95 (HD95) eval\'ua discrepancias de borde reduciendo sensibilidad a outliers:
 
 \begin{equation}
 HD95(P,G)=\max\left(p95(d(P,G)),p95(d(G,P))\right)
 \end{equation}
 
-donde d(P, G) representa distancias mínimas desde puntos de borde de P hacia G, y p95 el percentil 95.
+Estas m\'etricas permiten validar t\'ecnicamente el modelo, pero deben complementarse con revisi\'on cualitativa de plausibilidad anat\'omica, legibilidad visual y utilidad de las mediciones.
 
-\subsection{Normalized Surface Dice}
+\section{Visualizaci\'on, salida editable y trazabilidad}
 
-La métrica Normalized Surface Dice (NSD) mide qué proporción de la superficie predicha se encuentra dentro de una tolerancia espacial respecto de la referencia. Resulta útil cuando la precisión del contorno es más importante que el volumen o área total \parencite{maierhein_metrics_reloaded_2024}.
+La visualizaci\'on superpuesta permite revisar la imagen original junto con las m\'ascaras generadas. Es necesaria para detectar errores de contorno, estructuras omitidas o etiquetas incorrectas. En el prototipo, la interfaz debe permitir diferenciar estructuras, consultar mediciones asociadas y facilitar la revisi\'on profesional.
 
-\subsection{Interpretación responsable de métricas}
+La salida estructurada editable organiza los resultados en un formato revisable, con estructura anat\'omica, nivel, medici\'on, unidad, estado de revisi\'on y observaciones. La editabilidad permite corregir valores, descartar resultados y evitar que el sistema imponga una interpretaci\'on autom\'atica.
 
-Valores altos de Dice no garantizan por sí solos utilidad clínica. Un modelo puede obtener buen solapamiento global y aun así fallar en una región anatómicamente crítica. Por eso, el PFI combina validación técnica cuantitativa con revisión cualitativa profesional de plausibilidad anatómica, legibilidad visual y utilidad de mediciones.
+La trazabilidad exige que cada resultado pueda vincularse con su origen: imagen, m\'ascara, estructura, medici\'on y eventual correcci\'on profesional. Este principio diferencia al prototipo de una salida opaca y sostiene la validaci\'on posterior.
 
-\section{Visualización, interacción y salida estructurada}
+\section{IA asistiva, privacidad y l\'imites normativos}
 
-\subsection{Visualización superpuesta}
+Un sistema de apoyo a la decisi\'on cl\'inica presenta informaci\'on para asistir al profesional en una tarea de salud \parencite{berner_cdss_2007}. El PFI se ubica en un enfoque de humano en el circuito: el sistema propone resultados y el usuario los revisa, corrige o descarta.
 
-La utilidad de un sistema de segmentación no depende solo del desempeño algorítmico. El profesional debe poder revisar la imagen original y la máscara generada de forma clara. La visualización superpuesta permite detectar errores de contorno, estructuras omitidas, etiquetas incorrectas o segmentaciones anatómicamente improbables.
+Las im\'agenes m\'edicas son datos sensibles. Aunque el MVP trabaje con datasets p\'ublicos anotados, cualquier extensi\'on futura con estudios no p\'ublicos deber\'ia contemplar anonimizaci\'on, minimizaci\'on de datos, resguardo de metadatos y consentimiento cuando corresponda. En Argentina, esto debe considerar la Ley N.o 25.326 de Protecci\'on de Datos Personales y el art\'iculo 53 del C\'odigo Civil y Comercial vinculado al derecho a la imagen \parencite{argentina_ley_25326,argentina_codigo_civil_imagen}.
 
-Para el prototipo, la interfaz debería permitir activar o desactivar estructuras, distinguir clases por color, revisar niveles lumbares y observar mediciones asociadas a cada máscara. Esta capa de interacción es parte central del sistema, porque mantiene al usuario experto dentro del circuito de validación.
+\section{S\'intesis conceptual}
 
-\subsection{Salida estructurada editable}
-
-La salida estructurada editable organiza los resultados del sistema en un formato revisable. Puede incluir estructura anatómica, nivel, medición, unidad, estado de revisión, advertencias de baja confianza y observaciones del profesional. No debe presentarse como informe clínico automático, sino como plantilla de apoyo.
-
-La editabilidad es un requisito de seguridad y usabilidad: permite corregir errores, descartar mediciones, completar observaciones y evitar que el sistema imponga una interpretación automática.
-
-\subsection{Trazabilidad}
-
-La trazabilidad implica que cada resultado pueda vincularse con su origen: imagen, máscara, estructura, medición y eventual corrección profesional. En el PFI, esto significa que una medición no debería aparecer aislada, sino asociada a la máscara de la que proviene y al nivel anatómico correspondiente.
-
-\section{Inteligencia artificial asistiva y rol profesional}
-
-\subsection{Sistemas de apoyo a la decisión clínica}
-
-Un sistema de apoyo a la decisión clínica (Clinical Decision Support System, CDSS) es una herramienta informática que presenta información relevante para asistir al profesional en una tarea de salud \parencite{berner_cdss_2007}. En imágenes médicas, estos sistemas pueden ofrecer segmentaciones, mediciones, alertas o visualizaciones, pero su grado de autonomía determina sus implicancias clínicas y regulatorias.
-
-\subsection{Humano en el circuito}
-
-El prototipo se ubica en un enfoque human-in-the-loop: el sistema procesa la imagen y propone resultados, pero el profesional revisa, acepta, corrige o descarta dichos resultados. Esta decisión reduce el riesgo de automatización excesiva y es coherente con el alcance académico del proyecto.
-
-\subsection{Diferencia entre asistencia y diagnóstico autónomo}
-
-El PFI no emite diagnósticos, no clasifica patologías, no recomienda tratamientos y no reemplaza la interpretación médica. Su función es automatizar tareas operativas de segmentación, medición, visualización y documentación. Esta distinción es esencial para evitar sobreprometer capacidades clínicas y para mantener el prototipo dentro de un alcance técnicamente validable.
-
-\section{Privacidad, ética y límites normativos}
-
-Las imágenes médicas son datos sensibles. Aun cuando el MVP utilice datasets públicos anotados, cualquier trabajo futuro con estudios no públicos debería contemplar anonimización, minimización de datos, resguardo de metadatos y consentimiento cuando corresponda. En Argentina, este tratamiento debe considerar la Ley N.o 25.326 de Protección de Datos Personales y el artículo 53 del Código Civil y Comercial vinculado al derecho a la imagen \parencite{argentina_ley_25326,argentina_codigo_civil_imagen}.
-
-En el alcance actual, la principal medida ética es trabajar con datos públicos o debidamente anonimizados, no solicitar datos identificables de pacientes y comunicar con claridad que la herramienta no reemplaza al profesional.
-
-\section{Síntesis conceptual}
-
-La sintesis conceptual vincula cada nocion teorica con un componente del prototipo:
 \begin{itemize}
-    \item \textbf{RM lumbar sagital y secuencias T1/T2:} definen la modalidad, el plano y la entrada del sistema.
-    \item \textbf{Vertebras, discos y canal espinal:} delimitan las estructuras anatomicas que el modelo debe segmentar.
-    \item \textbf{Imagen medica con metadatos y normalizacion:} justifican preservar orientacion, espaciado, resolucion y trazabilidad durante carga y preprocesamiento.
-    \item \textbf{Segmentacion multiclase y ground truth:} sustentan el entrenamiento, la validacion y la comparacion contra anotaciones de referencia.
-    \item \textbf{U-Net, nnU-Net y frameworks especializados:} aportan bases metodologicas para la arquitectura y el pipeline de IA.
-    \item \textbf{Dice, IoU, HD95 y NSD:} permiten evaluar solapamiento y precision de bordes durante la validacion tecnica.
-    \item \textbf{Mediciones morfometricas, visualizacion superpuesta y salida editable:} conectan las mascaras con resultados revisables por el profesional.
-    \item \textbf{IA asistiva, privacidad y anonimizacion:} enmarcan el alcance etico, normativo y no diagnostico del prototipo.
+    \item RM lumbar sagital y secuencias T1/T2 definen la entrada del sistema.
+    \item V\'ertebras, discos y canal espinal delimitan las estructuras del MVP.
+    \item DICOM, NIfTI, metadatos y normalizaci\'on justifican preservar informaci\'on espacial.
+    \item Segmentaci\'on multiclase, ground truth y SPIDER sustentan entrenamiento y validaci\'on.
+    \item U-Net y nnU-Net aportan bases metodol\'ogicas para el modelo.
+    \item Dice, IoU y HD95 permiten evaluar desempe\~no t\'ecnico.
+    \item Mediciones, visualizaci\'on y salida editable conectan las m\'ascaras con una revisi\'on profesional trazable.
 \end{itemize}
 
-\section{Conclusión del marco teórico}
-
-El marco teórico fundamenta la viabilidad conceptual del PFI. La RM lumbar sagital proporciona imágenes adecuadas para observar vértebras, discos intervertebrales y canal espinal. La segmentación médica permite transformar esas imágenes en máscaras anatómicas evaluables, y los modelos de aprendizaje profundo ofrecen una vía técnica para automatizar esa tarea a partir de datos anotados. Las métricas de segmentación permiten validar objetivamente el desempeño del modelo, mientras que las mediciones morfométricas derivadas de las máscaras aportan una salida cuantitativa trazable.
-
-El valor del prototipo no reside en reemplazar al profesional ni en emitir diagnósticos, sino en integrar estos conceptos en un flujo revisable: imagen de entrada, segmentación, medición, visualización, salida editable y validación. Esta base conceptual sostiene el desarrollo de una herramienta académica, acotada, reproducible y alineada con el alcance definido para el Proyecto Final de Ingeniería.
+Esta base conceptual sostiene el desarrollo de una herramienta acad\'emica, acotada y reproducible para asistir el an\'alisis estructural de RM lumbar sin convertirlo en diagn\'ostico aut\'onomo.

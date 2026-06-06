@@ -129,48 +129,6 @@
       \field{title}{MRI: Basic Principles and Applications}
       \field{year}{2014}
     \endentry
-    \entry{cardoso_monai_2022}{misc}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=da7555ed408fdfa8a4bf2b6aa96e7e75}{%
-           family={Cardoso},
-           familyi={C\bibinitperiod},
-           given={M.\bibnamedelimi Jorge},
-           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{772e945314805674bc2dba65ec45f7d3}
-      \strng{fullhash}{772e945314805674bc2dba65ec45f7d3}
-      \strng{fullhashraw}{772e945314805674bc2dba65ec45f7d3}
-      \strng{bibnamehash}{772e945314805674bc2dba65ec45f7d3}
-      \strng{authorbibnamehash}{772e945314805674bc2dba65ec45f7d3}
-      \strng{authornamehash}{772e945314805674bc2dba65ec45f7d3}
-      \strng{authorfullhash}{772e945314805674bc2dba65ec45f7d3}
-      \strng{authorfullhashraw}{772e945314805674bc2dba65ec45f7d3}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprinttype}{arXiv}
-      \field{title}{MONAI: An open-source framework for deep learning in healthcare}
-      \field{urlday}{5}
-      \field{urlmonth}{6}
-      \field{urlyear}{2026}
-      \field{year}{2022}
-      \field{urldateera}{ce}
-      \verb{eprint}
-      \verb 2211.02701
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2211.02701
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2211.02701
-      \endverb
-    \endentry
     \entry{cox_nifti_2004}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -202,45 +160,6 @@
       \field{year}{2004}
       \field{pages}{e1440}
       \range{pages}{-1}
-    \endentry
-    \entry{dosovitskiy_vit_2021}{inproceedings}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=72308762399d6ab62bbd9391c64c7bfd}{%
-           family={Dosovitskiy},
-           familyi={D\bibinitperiod},
-           given={Alexey},
-           giveni={A\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{d96316bc7578db680aba71d4226354c8}
-      \strng{fullhash}{d96316bc7578db680aba71d4226354c8}
-      \strng{fullhashraw}{d96316bc7578db680aba71d4226354c8}
-      \strng{bibnamehash}{d96316bc7578db680aba71d4226354c8}
-      \strng{authorbibnamehash}{d96316bc7578db680aba71d4226354c8}
-      \strng{authornamehash}{d96316bc7578db680aba71d4226354c8}
-      \strng{authorfullhash}{d96316bc7578db680aba71d4226354c8}
-      \strng{authorfullhashraw}{d96316bc7578db680aba71d4226354c8}
-      \field{sortinit}{D}
-      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{International Conference on Learning Representations}
-      \field{title}{An image is worth 16x16 words: Transformers for image recognition at scale}
-      \field{urlday}{5}
-      \field{urlmonth}{6}
-      \field{urlyear}{2026}
-      \field{year}{2021}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2010.11929
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2010.11929
-      \endverb
     \endentry
     \entry{vandergraaf_spider_2024}{article}{}{}
       \true{moreauthor}
@@ -469,51 +388,6 @@
       \verb 10.1109/CVPR.2019.00963
       \endverb
       \keyw{adicional}
-    \endentry
-    \entry{lecun_deep_learning_2015}{article}{}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
-           family={LeCun},
-           familyi={L\bibinitperiod},
-           given={Yann},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
-           family={Bengio},
-           familyi={B\bibinitperiod},
-           given={Yoshua},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=9a8750ccdb2a4cf14d2655face1ce016}{%
-           family={Hinton},
-           familyi={H\bibinitperiod},
-           given={Geoffrey},
-           giveni={G\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{9e4c6012409dc8dd9b2aa198a2059804}
-      \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{fullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{bibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authornamehash}{9e4c6012409dc8dd9b2aa198a2059804}
-      \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
-      \strng{authorfullhashraw}{c6c75bd00ce5a488e91a749d8383b3df}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nature}
-      \field{title}{Deep learning}
-      \field{volume}{521}
-      \field{year}{2015}
-      \field{pages}{436\bibrangedash 444}
-      \range{pages}{9}
-      \verb{doi}
-      \verb 10.1038/nature14539
-      \endverb
     \endentry
     \entry{litjens_survey_2017}{article}{}{}
       \true{moreauthor}
@@ -762,48 +636,6 @@
       \endverb
       \verb{url}
       \verb https://www.dicomstandard.org/
-      \endverb
-    \endentry
-    \entry{oktay_attention_unet_2018}{misc}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=522a1f3bd149ca0406188abfb424c46a}{%
-           family={Oktay},
-           familyi={O\bibinitperiod},
-           given={Ozan},
-           giveni={O\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{3c926513cb4db42dfabd499e86fbfa18}
-      \strng{fullhash}{3c926513cb4db42dfabd499e86fbfa18}
-      \strng{fullhashraw}{3c926513cb4db42dfabd499e86fbfa18}
-      \strng{bibnamehash}{3c926513cb4db42dfabd499e86fbfa18}
-      \strng{authorbibnamehash}{3c926513cb4db42dfabd499e86fbfa18}
-      \strng{authornamehash}{3c926513cb4db42dfabd499e86fbfa18}
-      \strng{authorfullhash}{3c926513cb4db42dfabd499e86fbfa18}
-      \strng{authorfullhashraw}{3c926513cb4db42dfabd499e86fbfa18}
-      \field{sortinit}{O}
-      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprinttype}{arXiv}
-      \field{title}{Attention U-Net: Learning where to look for the pancreas}
-      \field{urlday}{5}
-      \field{urlmonth}{6}
-      \field{urlyear}{2026}
-      \field{year}{2018}
-      \field{urldateera}{ce}
-      \verb{eprint}
-      \verb 1804.03999
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/1804.03999
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/1804.03999
       \endverb
     \endentry
     \entry{argentina_codigo_civil_imagen}{online}{}{}
