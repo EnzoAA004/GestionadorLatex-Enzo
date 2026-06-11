@@ -1,8 +1,19 @@
-\chapter{Figuras anat\'omicas de referencia}
+\chapter{Anatomía de la columna lumbar y los discos intervertebrales}
+\label{anexo:anatomia-lumbar}
 
-Las figuras de este anexo son esquem\'aticas y tienen finalidad exclusivamente explicativa. No representan un estudio cl\'inico real ni deben utilizarse para interpretaci\'on diagn\'ostica. Su objetivo es facilitar la comprensi\'on general de las estructuras anat\'omicas consideradas por el prototipo y del flujo conceptual de segmentaci\'on utilizado en el proyecto.
+Este anexo resume las nociones anatómicas mínimas necesarias para comprender el dominio del prototipo. Está dirigido a lectores sin formación médica y no pretende ser exhaustivo desde el punto de vista clínico.
+
+La columna vertebral es una estructura ósea que sostiene el tronco, permite el movimiento y protege la médula espinal. Se organiza en regiones; la región lumbar es la parte baja de la espalda y está formada por cinco vértebras, denominadas L1 a L5, ubicadas entre la columna torácica y el sacro. Por soportar gran parte del peso corporal y concentrar mucha movilidad, es una zona especialmente propensa al dolor y a la degeneración.
+
+Cada vértebra está compuesta, a grandes rasgos, por un cuerpo vertebral anterior, de forma cilíndrica, que soporta la carga, y un arco posterior que rodea y protege el canal espinal. Las vértebras se apilan una sobre otra y, en conjunto, conforman el eje que da soporte al cuerpo.
+
+Entre cada par de cuerpos vertebrales se encuentra un disco intervertebral. El disco está formado por un anillo fibroso externo, \textit{anulus fibrosus}, y un núcleo gelatinoso central, \textit{nucleus pulposus}, que actúa como amortiguador: distribuye las cargas y permite que la columna se flexione y gire. Con la edad o por sobrecarga, los discos pueden perder altura, deshidratarse o desplazarse, lo que se asocia con frecuencia al dolor lumbar y a la compresión de estructuras nerviosas.
+
+El canal espinal es el conducto que recorre la columna por detrás de los cuerpos vertebrales y aloja la médula espinal y las raíces nerviosas. Su estrechamiento, denominado estenosis, puede comprimir esas estructuras y producir síntomas. Por su disposición, las vértebras, los discos y el canal espinal se aprecian con claridad en las imágenes de resonancia magnética en plano sagital, que es precisamente la entrada sobre la que opera el prototipo descrito en este trabajo.
 
 \section{Esquema simplificado de columna lumbar sagital}
+
+Las figuras de este anexo son esquemáticas y tienen finalidad exclusivamente explicativa. No representan un estudio clínico real ni deben utilizarse para interpretación diagnóstica. Su objetivo es facilitar la comprensión general de las estructuras anatómicas consideradas por el prototipo y del flujo conceptual de segmentación utilizado en el proyecto.
 
 \begin{figure}[H]
 \centering
@@ -31,11 +42,11 @@ Las figuras de este anexo son esquem\'aticas y tienen finalidad exclusivamente e
 
     \node[font=\bfseries] at (1.08,7.32) {Cuerpos vertebrales};
 \end{tikzpicture}
-\caption{Esquema simplificado de v\'ertebras lumbares, discos intervertebrales y canal espinal en vista sagital. Elaboraci\'on propia.}
+\caption{Esquema simplificado de vértebras lumbares, discos intervertebrales y canal espinal en vista sagital. Elaboración propia.}
 \label{fig:esquema-lumbar-sagital}
 \end{figure}
 
-\section{Esquema conceptual de segmentaci\'on}
+\section{Esquema conceptual de segmentación}
 
 \begin{figure}[H]
 \centering
@@ -65,15 +76,15 @@ Las figuras de este anexo son esquem\'aticas y tienen finalidad exclusivamente e
 }
 
 % Bloque 2: modelo
-\node[modelbox] (model) at (4.9,0) {\textbf{Modelo IA}\\Segmentaci\'on};
+\node[modelbox] (model) at (4.9,0) {\textbf{Modelo IA}\\Segmentación};
 
 % Bloque 3: mascaras
 \node[maskbox] (masks) at (9.8,0) {};
-\node[above=0.15cm of masks] {\textbf{M\'ascaras generadas}};
+\node[above=0.15cm of masks] {\textbf{Máscaras generadas}};
 
 % Mini mascaras / leyenda
 \draw[vertebra] (8.25,0.65) rectangle (8.85,0.95);
-\node[anchor=west] at (9.15,0.80) {V\'ertebras};
+\node[anchor=west] at (9.15,0.80) {Vértebras};
 
 \draw[disc] (8.25,0.10) rectangle (8.85,0.28);
 \node[anchor=west] at (9.15,0.19) {Discos};
@@ -87,6 +98,6 @@ Las figuras de este anexo son esquem\'aticas y tienen finalidad exclusivamente e
 
 \end{tikzpicture}
 }
-\caption{Esquema conceptual del pasaje desde una RM lumbar hacia m\'ascaras de segmentaci\'on. Elaboraci\'on propia.}
+\caption{Esquema conceptual del pasaje desde una RM lumbar hacia máscaras de segmentación. Elaboración propia.}
 \label{fig:esquema-segmentacion}
 \end{figure}
