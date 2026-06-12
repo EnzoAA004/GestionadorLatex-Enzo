@@ -43,10 +43,8 @@ Alcance operativo. El prototipo se limita a RM lumbar sagital. Esta decisión no
 
 \begin{quote}
 \itshape
-Incorporación del plano axial como módulo complementario. Si bien el alcance original del prototipo se definió sobre RM lumbar sagital, el relevamiento del estado del arte identificó un dataset adicional (Sudirman et al., 2019) con anotaciones axiales nativas para los tres niveles discales inferiores. La práctica clínica habitual combina sagital con axial T2 para evaluar canal espinal, forámenes neurales y compresión radicular en sección transversal. La incorporación de un módulo axial complementario, sobre los niveles L3/L4, L4/L5 y L5/S1, permite cubrir parcialmente este complemento sin modificar el núcleo sagital del MVP.
+Si bien el alcance aprobado inicialmente se centra en RM lumbar sagital, el relevamiento preliminar con profesionales y el análisis de antecedentes señalaron el valor del plano axial como complemento. Esta posible ampliación se documenta en el Anexo~\ref{anexo:modulo-axial-preliminar} y se evaluará formalmente para la entrega del 50\%.
 \end{quote}
-
-La verificación técnica de los headers DICOM del dataset Sudirman confirmó que sus secuencias T1 axial y T2 axial del mismo paciente comparten pixel spacing (0,6875 mm), slice thickness (4 mm) y posición espacial prácticamente idénticas, lo que evidencia un co-registro nativo entre ambas. Esta propiedad permite utilizar las máscaras anotadas sobre T1 para entrenamiento sobre T2, dado que la geometría volumétrica es coincidente. El plano axial se considera, en consecuencia, plano complementario de adquisición y no plano principal: la base anatómica del prototipo y la mayor parte de la validación técnica continúan apoyándose en SPIDER sagital.
 
 \section{Anatomía lumbar relevante para el prototipo}
 
@@ -74,7 +72,7 @@ El canal espinal corresponde al espacio anatómico contenido dentro de la column
 
 \begin{quote}
 \itshape
-Estructuras adicionales contempladas en el módulo axial. El dataset Sudirman incluye en sus anotaciones axiales dos estructuras adicionales que no figuran en SPIDER: los elementos posteriores de la vértebra (apófisis articulares, láminas y procesos espinosos) y el área entre elementos anterior y posterior (AAP). Estas estructuras son particularmente relevantes para el módulo axial porque su hipertrofia es una causa frecuente de estenosis del canal en plano transversal, situación en la que el diámetro anteroposterior puede permanecer dentro de rangos normales mientras el área del canal se reduce significativamente. La cauda equina, conjunto de raíces nerviosas que ocupa el canal lumbar por debajo del cono medular, no se segmenta directamente en el MVP pero su evaluación visual queda implícita en la inspección del saco tecal.
+Complemento axial preliminar. Elementos como saco tecal, forámenes neurales, cauda equina y elementos posteriores se documentan como parte de la posible ampliación axial del alcance, desarrollada en el Anexo~\ref{anexo:modulo-axial-preliminar}. Para esta entrega, las estructuras principales del MVP siguen siendo vértebras, discos intervertebrales y canal espinal en RM lumbar sagital.
 \end{quote}
 
 \begin{quote}
@@ -190,8 +188,7 @@ En el alcance del MVP, las mediciones deben ser simples, trazables y derivables 
     \item \textbf{Altura relativa de discos intervertebrales:} medida geométrica derivada de la extensión del disco en el plano sagital.
     \item \textbf{Dimensiones relativas del canal espinal en el plano sagital:} medidas de apoyo basadas en la máscara del canal, sin asumir diagnóstico de estenosis.
     \item \textbf{Comparación entre niveles:} relación entre valores obtenidos en distintos segmentos lumbares, útil como apoyo descriptivo.
-    \item \textbf{Área del saco tecal en sección transversal axial:} medición derivada del módulo axial sobre los niveles L3/L4 a L5/S1, considerada en la literatura más sensible a estenosis que el diámetro anteroposterior aislado, especialmente cuando existen cambios degenerativos posteriores que reducen el diámetro transverso del canal sin afectar el AP \parencite{pfirrmann_disc_degeneration_2001}.
-    \item \textbf{Anchos foraminales aproximados sobre cortes axiales:} medición de apoyo derivada de la segmentación de elementos posteriores y del área entre elementos anterior y posterior, según el pipeline antecedente de Natalia et al. \parencite{natalia_measurement_2020}.
+    \item \textbf{Mediciones axiales complementarias:} áreas o anchos derivados de cortes axiales podrían evaluarse en una ampliación posterior, documentada en el Anexo~\ref{anexo:modulo-axial-preliminar}, sin formar parte consolidada del núcleo sagital de esta entrega.
 \end{itemize}
 
 \subsection{Límites clínicos de las mediciones}
@@ -257,7 +254,7 @@ La utilidad de un sistema de segmentación no depende solo del desempeño algor�
 
 Para el prototipo, la interfaz debería permitir activar o desactivar estructuras, distinguir clases por color, revisar niveles lumbares y observar mediciones asociadas a cada máscara. Esta capa de interacción es parte central del sistema, porque mantiene al usuario experto dentro del circuito de validación.
 
-La centralidad de la revisión visual fue confirmada en el relevamiento profesional preliminar realizado para el proyecto: la mayoría del flujo del radiólogo se procesa por la vía visual, y una segmentación que no pueda contrastarse cómodamente contra la imagen original pierde valor operativo, independientemente de sus métricas técnicas. En particular, el módulo axial debe presentar las cuatro regiones de interés diferenciadas por color (disco, elemento posterior, saco tecal, AAP) sobre el corte axial original, permitiendo al profesional verificar visualmente la plausibilidad de la segmentación nivel por nivel.
+La centralidad de la revisión visual fue confirmada en el relevamiento profesional preliminar realizado para el proyecto: la mayoría del flujo del radiólogo se procesa por la vía visual, y una segmentación que no pueda contrastarse cómodamente contra la imagen original pierde valor operativo, independientemente de sus métricas técnicas.
 
 \subsection{Salida estructurada editable}
 
@@ -317,8 +314,7 @@ Visualización superpuesta & Permite revisión visual por el profesional. & Inte
 Salida editable & Organiza resultados sin generar diagnóstico automático. & Plantilla revisable \\
 IA asistiva & Define el rol del sistema como apoyo operativo. & Alcance clínico \\
 Privacidad y anonimización & Enmarca el uso responsable de datos médicos. & Ética y normativa \\
-Plano axial complementario & Cobertura transversal sobre niveles L3/L4--L5/S1. & Módulo axial sobre Sudirman \\
-Co-registro DICOM T1--T2 & Permite usar máscaras T1 para entrenamiento sobre T2. & Preprocesamiento axial \\
+Plano axial complementario & Posible ampliación preliminar documentada en anexo. & Evaluación para entrega del 50\% \\
 \hline
 \end{tabularx}
 \end{table}
@@ -327,6 +323,6 @@ Co-registro DICOM T1--T2 & Permite usar máscaras T1 para entrenamiento sobre T2
 
 El marco teórico fundamenta la viabilidad conceptual del PFI. La RM lumbar sagital proporciona imágenes adecuadas para observar vértebras, discos intervertebrales y canal espinal. La segmentación médica permite transformar esas imágenes en máscaras anatómicas evaluables, y los modelos de aprendizaje profundo ofrecen una vía técnica para automatizar esa tarea a partir de datos anotados. Las métricas de segmentación permiten validar objetivamente el desempeño del modelo, mientras que las mediciones morfométricas derivadas de las máscaras aportan una salida cuantitativa trazable.
 
-Adicionalmente, en una primera instancia de relevamiento cualitativo con profesional especializado en neurorradiología, no se identificaron objeciones de fondo al planteo del proyecto. El enfoque ``segmentación + mediciones simples + revisión humana'' fue evaluado como clínicamente razonable. El relevamiento técnico complementario derivó en la incorporación del dataset Sudirman como base para un módulo axial complementario, que amplía la cobertura del prototipo a los niveles discales inferiores en sección transversal sin modificar el módulo sagital principal sobre SPIDER. Esta ampliación responde a un hallazgo legítimo del estado del arte y se mantiene dentro de la lógica acotada y reproducible del MVP original.
+Adicionalmente, en una primera instancia de relevamiento cualitativo con profesional especializado en neurorradiología, no se identificaron objeciones de fondo al planteo del proyecto. El enfoque ``segmentación + mediciones simples + revisión humana'' fue evaluado como clínicamente razonable. El relevamiento técnico complementario señaló el plano axial como posible ampliación, pero su alcance definitivo se documenta como preliminar y se evaluará para la entrega del 50\%, manteniendo el módulo sagital sobre SPIDER como base principal del MVP.
 
 El valor del prototipo no reside en reemplazar al profesional ni en emitir diagnósticos, sino en integrar estos conceptos en un flujo revisable: imagen de entrada, segmentación, medición, visualización, salida editable y validación. Esta base conceptual sostiene el desarrollo de una herramienta académica, acotada, reproducible y alineada con el alcance definido para el Proyecto Final de Ingeniería.

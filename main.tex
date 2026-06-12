@@ -11,17 +11,38 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
-\usepackage[backend=biber, style=iso-authoryear, language=spanish]{biblatex}
+\usepackage[
+	backend=biber,
+	style=iso-numeric,
+	sorting=none,
+	defernumbers=true,
+	maxbibnames=99,
+	giveninits=false,
+	doi=true,
+	url=true,
+	isbn=false,
+	language=spanish
+]{biblatex}
 \DeclareUnicodeCharacter{202F}{~}
 \addbibresource{references.bib}
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
+
+% El estilo iso-numeric redefine \parencite con paréntesis; se fuerza a corchetes para citas numéricas [n].
+\DeclareCiteCommand{\parencite}[\mkbibbrackets]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 
 \DeclareFieldFormat{urldate}{\mkbibbrackets{consultado\space#1}}
 
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{framed}
 \usepackage{float}
+\usepackage{adjustbox}
+\usepackage{needspace}
 \usepackage[section,above,below]{placeins}
 \usepackage{microtype}
 \usepackage{anyfontsize}
@@ -54,7 +75,7 @@
 
 \newpagestyle{ruled}{
 	\sethead{\includegraphics[width=3.7cm]{./images/UADE_LARGE}}
-			{\parbox[b]{0.50\textwidth}{\raggedright\fontsize{8.5}{10}\selectfont\MakeUppercase{Plataforma de apoyo al an\'alisis estructural de resonancia magn\'etica lumbar mediante segmentaci\'on anat\'omica asistida por inteligencia artificial}}}
+			{\parbox[b]{0.43\textwidth}{\raggedright\fontsize{8.5}{10}\selectfont\MakeUppercase{An\'alisis asistido de RM lumbar mediante IA}}}
 			{
 				\raisebox{1.5ex}{%
 					\parbox[b]{0.19\textwidth}{\raggedleft\fontsize{9}{10}\selectfont
@@ -188,19 +209,12 @@
 \setlength{\cftbeforelottitleskip}{12pt}
 \setlength{\cftafterlottitleskip}{6pt}
 
-% IMPORTANTE: En la entrega final de UADE se debe dejar sin color.
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks,
-    citecolor=red
+    colorlinks=false,
+    pdfborder={0 0 0},
+    linktoc=all
 }
-% Para la entrega final:
-%\usepackage[hidelinks]{hyperref}
-%\hypersetup{
-%    colorlinks=false,
-%    pdfborder={0 0 0},
-%    linktoc=none
-%}
 
 \DefineBibliographyStrings{spanish}{
   online   = {En l\'inea},
@@ -248,10 +262,12 @@
 % Capitulos a incorporar en una segunda instancia:
 \input{chapters/capitulo_07_estado_del_arte}
 \input{chapters/capitulo_08_marco_teorico}
+% \input{chapters/capitulo_09_planificacion_proyecto}
 
 \appendix
 \input{appendices/anexo_a_glosario_tecnico}
 \input{appendices/anexo_b_figuras_anatomicas}
+\input{appendices/anexo_c_modulo_axial_preliminar}
 
 \nocite{asplanatti_fabrello_propuesta_2026,kirillov_panoptic_2019}
 
