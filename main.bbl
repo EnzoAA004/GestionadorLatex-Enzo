@@ -483,6 +483,93 @@
       \verb 10.7326/0003-4819-137-7-200210010-00010
       \endverb
     \endentry
+    \entry{alkafri_sudirman_boundary_2019}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=2f7a4e3cd0efb9e24865e7d491032263}{%
+           family={Al-Kafri},
+           familyi={A\bibinithyphendelim K\bibinitperiod},
+           given={Ala\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=44424444d16ed3ba79f9669b141639e5}{%
+           family={Sudirman},
+           familyi={S\bibinitperiod},
+           given={Sud},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=855c40fcf64ce08dd0039899ac86dc1e}{%
+           family={Hussain},
+           familyi={H\bibinitperiod},
+           given={Abir},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=275962dd2f978b1a75fab971bcda4a09}{%
+           family={Al-Jumeily},
+           familyi={A\bibinithyphendelim J\bibinitperiod},
+           given={Dhiya},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=368979009ca820e624a8312bbece88de}{%
+           family={Natalia},
+           familyi={N\bibinitperiod},
+           given={Friska},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3109261bc255f3fb37be154cd67af470}{%
+           family={Meidia},
+           familyi={M\bibinitperiod},
+           given={Hira},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4f4b5939df4ca77886a35bd1718f994c}{%
+           family={Afriliana},
+           familyi={A\bibinitperiod},
+           given={Nunik},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=73cbded0cfa20d34c3197039e29fb0c4}{%
+           family={Al-Rashdan},
+           familyi={A\bibinithyphendelim R\bibinitperiod},
+           given={Wasfi},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d84686199d16b29b76711bf0659560c}{%
+           family={Bashtawi},
+           familyi={B\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab712ca9c25106ee306fc46004355f80}{%
+           family={Al-Jumaily},
+           familyi={A\bibinithyphendelim J\bibinitperiod},
+           given={Mohammed},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{59b0429e8e9b8cd5cc4f46e8daa4be40}
+      \strng{fullhash}{99c573f6f5c7854453a38b7552094590}
+      \strng{fullhashraw}{99c573f6f5c7854453a38b7552094590}
+      \strng{bibnamehash}{99c573f6f5c7854453a38b7552094590}
+      \strng{authorbibnamehash}{99c573f6f5c7854453a38b7552094590}
+      \strng{authornamehash}{59b0429e8e9b8cd5cc4f46e8daa4be40}
+      \strng{authorfullhash}{99c573f6f5c7854453a38b7552094590}
+      \strng{authorfullhashraw}{99c573f6f5c7854453a38b7552094590}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{Boundary Delineation of MRI Images for Lumbar Spinal Stenosis Detection Through Semantic Segmentation Using Deep Neural Networks}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{pages}{43487\bibrangedash 43501}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2908002
+      \endverb
+    \endentry
     \entry{kirillov_panoptic_2019}{inproceedings}{}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=28c5859f568975f174c8668976ed369d}{%
@@ -935,6 +1022,93 @@
       \verb https://monai.io
       \endverb
     \endentry
+    \entry{natalia_measurement_2020}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=368979009ca820e624a8312bbece88de}{%
+           family={Natalia},
+           familyi={N\bibinitperiod},
+           given={Friska},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3109261bc255f3fb37be154cd67af470}{%
+           family={Meidia},
+           familyi={M\bibinitperiod},
+           given={Hira},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4f4b5939df4ca77886a35bd1718f994c}{%
+           family={Afriliana},
+           familyi={A\bibinitperiod},
+           given={Nunik},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2f7a4e3cd0efb9e24865e7d491032263}{%
+           family={Al-Kafri},
+           familyi={A\bibinithyphendelim K\bibinitperiod},
+           given={Ala\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=44424444d16ed3ba79f9669b141639e5}{%
+           family={Sudirman},
+           familyi={S\bibinitperiod},
+           given={Sud},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=127c312dd969b55660deebbebbdae5c1}{%
+           family={Simpson},
+           familyi={S\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f5845a1ea987e50d84a6f07249b9c38a}{%
+           family={Sophian},
+           familyi={S\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ab712ca9c25106ee306fc46004355f80}{%
+           family={Al-Jumaily},
+           familyi={A\bibinithyphendelim J\bibinitperiod},
+           given={Mohammed},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=73cbded0cfa20d34c3197039e29fb0c4}{%
+           family={Al-Rashdan},
+           familyi={A\bibinithyphendelim R\bibinitperiod},
+           given={Wasfi},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d84686199d16b29b76711bf0659560c}{%
+           family={Bashtawi},
+           familyi={B\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bcbecf1ca63d270fe66d38c134efd196}
+      \strng{fullhash}{e9a41eb2ee9899180a91c5680848d7fa}
+      \strng{fullhashraw}{e9a41eb2ee9899180a91c5680848d7fa}
+      \strng{bibnamehash}{e9a41eb2ee9899180a91c5680848d7fa}
+      \strng{authorbibnamehash}{e9a41eb2ee9899180a91c5680848d7fa}
+      \strng{authornamehash}{bcbecf1ca63d270fe66d38c134efd196}
+      \strng{authorfullhash}{e9a41eb2ee9899180a91c5680848d7fa}
+      \strng{authorfullhashraw}{e9a41eb2ee9899180a91c5680848d7fa}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eid}{e0241309}
+      \field{journaltitle}{PLOS ONE}
+      \field{number}{11}
+      \field{title}{Automated measurement of anteroposterior diameter and foraminal widths in MRI images for lumbar spinal stenosis diagnosis}
+      \field{volume}{15}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0241309
+      \endverb
+    \endentry
     \entry{nema_dicom_2024}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=85275dd9c049dca1c8c1d07ab42daccc}{%
@@ -1042,6 +1216,64 @@
       \field{year}{2026}
       \verb{doi}
       \verb 10.1186/s12880-026-02220-7
+      \endverb
+    \endentry
+    \entry{pfirrmann_disc_degeneration_2001}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=56c8a81d72a8be58f9e29d392e742eae}{%
+           family={Pfirrmann},
+           familyi={P\bibinitperiod},
+           given={Christian\bibnamedelimb W.\bibnamedelimi A.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e77cf398c8f149c55dd14484deefe48a}{%
+           family={Metzdorf},
+           familyi={M\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e438ec0def5b5dee96faeae93e46d7ae}{%
+           family={Zanetti},
+           familyi={Z\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66fc7def58dbba70e33930e664d4ce22}{%
+           family={Hodler},
+           familyi={H\bibinitperiod},
+           given={Juerg},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8011aa36ee0a4744cc7c57e963e6ca16}{%
+           family={Boos},
+           familyi={B\bibinitperiod},
+           given={Norbert},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1fd02262ca7b15e532c7b36d948181a7}
+      \strng{fullhash}{cf66725471aaf0e8d6ddd9073260aede}
+      \strng{fullhashraw}{cf66725471aaf0e8d6ddd9073260aede}
+      \strng{bibnamehash}{cf66725471aaf0e8d6ddd9073260aede}
+      \strng{authorbibnamehash}{cf66725471aaf0e8d6ddd9073260aede}
+      \strng{authornamehash}{1fd02262ca7b15e532c7b36d948181a7}
+      \strng{authorfullhash}{cf66725471aaf0e8d6ddd9073260aede}
+      \strng{authorfullhashraw}{cf66725471aaf0e8d6ddd9073260aede}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Spine}
+      \field{number}{17}
+      \field{title}{Magnetic resonance classification of lumbar intervertebral disc degeneration}
+      \field{volume}{26}
+      \field{year}{2001}
+      \field{pages}{1873\bibrangedash 1878}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1097/00007632-200109010-00011
       \endverb
     \endentry
     \entry{argentina_codigo_civil_imagen}{online}{}{}
